@@ -24,12 +24,14 @@ namespace GestionBibliotheque
         public TextBox TitreTextBox { get { return titreLivreTextBox3; } }
         public TextBox JoursTextBox { get { return nbrJoursTextBox4; } }
         public RichTextBox RaisonRichTextBox { get { return richTextBox; } }
+        
         #endregion
 
         public LivreEnfantForm()
         {
             InitializeComponent();
-
+            Modification = false;
+            Enregistrement = false;
             // Détecter modifications
             nomTextBox1.TextChanged += Zones_TextChanged;
             classeTextBox2.TextChanged += Zones_TextChanged;
@@ -165,5 +167,10 @@ namespace GestionBibliotheque
             Modification = true;
         }
         #endregion
+
+        private void LivreEnfantForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

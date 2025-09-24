@@ -40,15 +40,6 @@
             this.EnregistrerSousToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.quitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripMenuItem();
-            this.couperToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.copierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.collerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripMenuItem13 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem14 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
-            this.rechercherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.affichageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.outilsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.professionnelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,6 +57,15 @@
             this.toolStripMenuItem30 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.uneQuestionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripMenuItem();
+            this.couperToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.collerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItem13 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem14 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
+            this.rechercherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -182,12 +182,14 @@
             this.enregistrerToolStripMenuItem.Name = "enregistrerToolStripMenuItem";
             this.enregistrerToolStripMenuItem.Size = new System.Drawing.Size(283, 34);
             this.enregistrerToolStripMenuItem.Text = "Enregistrer      Ctrl+S";
+            this.enregistrerToolStripMenuItem.Click += new System.EventHandler(this.enregistrerToolStripMenuItem_Click);
             // 
             // EnregistrerSousToolStripMenuItem
             // 
             this.EnregistrerSousToolStripMenuItem.Name = "EnregistrerSousToolStripMenuItem";
             this.EnregistrerSousToolStripMenuItem.Size = new System.Drawing.Size(283, 34);
             this.EnregistrerSousToolStripMenuItem.Text = "Enregistrer sous...";
+            this.EnregistrerSousToolStripMenuItem.Click += new System.EventHandler(this.EnregistrerSousToolStripMenuItem_Click);
             // 
             // toolStripSeparator11
             // 
@@ -200,67 +202,6 @@
             this.quitterToolStripMenuItem.Size = new System.Drawing.Size(283, 34);
             this.quitterToolStripMenuItem.Text = "Quitter";
             this.quitterToolStripMenuItem.Click += new System.EventHandler(this.QuitterToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem9
-            // 
-            this.toolStripMenuItem9.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.couperToolStripMenuItem,
-            this.copierToolStripMenuItem,
-            this.collerToolStripMenuItem,
-            this.toolStripSeparator13,
-            this.toolStripMenuItem13,
-            this.toolStripMenuItem14,
-            this.toolStripSeparator14,
-            this.rechercherToolStripMenuItem});
-            this.toolStripMenuItem9.Name = "toolStripMenuItem9";
-            this.toolStripMenuItem9.Size = new System.Drawing.Size(113, 31);
-            this.toolStripMenuItem9.Text = "Rechercher";
-            // 
-            // couperToolStripMenuItem
-            // 
-            this.couperToolStripMenuItem.Name = "couperToolStripMenuItem";
-            this.couperToolStripMenuItem.Size = new System.Drawing.Size(295, 34);
-            this.couperToolStripMenuItem.Text = "Couper     Ctrl+Shift+X";
-            // 
-            // copierToolStripMenuItem
-            // 
-            this.copierToolStripMenuItem.Name = "copierToolStripMenuItem";
-            this.copierToolStripMenuItem.Size = new System.Drawing.Size(295, 34);
-            this.copierToolStripMenuItem.Text = "Copier      Ctrl+Shift+C";
-            // 
-            // collerToolStripMenuItem
-            // 
-            this.collerToolStripMenuItem.Name = "collerToolStripMenuItem";
-            this.collerToolStripMenuItem.Size = new System.Drawing.Size(295, 34);
-            this.collerToolStripMenuItem.Text = "Coller       Ctrl+Shift+V";
-            // 
-            // toolStripSeparator13
-            // 
-            this.toolStripSeparator13.Name = "toolStripSeparator13";
-            this.toolStripSeparator13.Size = new System.Drawing.Size(292, 6);
-            // 
-            // toolStripMenuItem13
-            // 
-            this.toolStripMenuItem13.Name = "toolStripMenuItem13";
-            this.toolStripMenuItem13.Size = new System.Drawing.Size(295, 34);
-            this.toolStripMenuItem13.Text = "Effacer";
-            // 
-            // toolStripMenuItem14
-            // 
-            this.toolStripMenuItem14.Name = "toolStripMenuItem14";
-            this.toolStripMenuItem14.Size = new System.Drawing.Size(295, 34);
-            this.toolStripMenuItem14.Text = "Selectionner    Ctrl+A";
-            // 
-            // toolStripSeparator14
-            // 
-            this.toolStripSeparator14.Name = "toolStripSeparator14";
-            this.toolStripSeparator14.Size = new System.Drawing.Size(292, 6);
-            // 
-            // rechercherToolStripMenuItem
-            // 
-            this.rechercherToolStripMenuItem.Name = "rechercherToolStripMenuItem";
-            this.rechercherToolStripMenuItem.Size = new System.Drawing.Size(295, 34);
-            this.rechercherToolStripMenuItem.Text = "Rechercher";
             // 
             // affichageToolStripMenuItem
             // 
@@ -277,27 +218,27 @@
             this.systemeToolStripMenuItem,
             this.gestionnaireToolStripMenuItem20});
             this.outilsToolStripMenuItem.Name = "outilsToolStripMenuItem";
-            this.outilsToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.outilsToolStripMenuItem.Size = new System.Drawing.Size(217, 34);
             this.outilsToolStripMenuItem.Text = "Barre d\'outils";
             // 
             // professionnelToolStripMenuItem
             // 
             this.professionnelToolStripMenuItem.Name = "professionnelToolStripMenuItem";
-            this.professionnelToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.professionnelToolStripMenuItem.Size = new System.Drawing.Size(220, 34);
             this.professionnelToolStripMenuItem.Text = "Professionnel";
             this.professionnelToolStripMenuItem.Click += new System.EventHandler(this.professionnelToolStripMenuItem_Click);
             // 
             // systemeToolStripMenuItem
             // 
             this.systemeToolStripMenuItem.Name = "systemeToolStripMenuItem";
-            this.systemeToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.systemeToolStripMenuItem.Size = new System.Drawing.Size(220, 34);
             this.systemeToolStripMenuItem.Text = "Systeme";
             this.systemeToolStripMenuItem.Click += new System.EventHandler(this.professionnelToolStripMenuItem_Click);
             // 
             // gestionnaireToolStripMenuItem20
             // 
             this.gestionnaireToolStripMenuItem20.Name = "gestionnaireToolStripMenuItem20";
-            this.gestionnaireToolStripMenuItem20.Size = new System.Drawing.Size(270, 34);
+            this.gestionnaireToolStripMenuItem20.Size = new System.Drawing.Size(220, 34);
             this.gestionnaireToolStripMenuItem20.Text = "Gestionnaire";
             this.gestionnaireToolStripMenuItem20.Click += new System.EventHandler(this.professionnelToolStripMenuItem_Click);
             // 
@@ -390,6 +331,67 @@
             this.uneQuestionToolStripMenuItem.Name = "uneQuestionToolStripMenuItem";
             this.uneQuestionToolStripMenuItem.Size = new System.Drawing.Size(178, 31);
             this.uneQuestionToolStripMenuItem.Text = "Taper une question";
+            // 
+            // toolStripMenuItem9
+            // 
+            this.toolStripMenuItem9.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.couperToolStripMenuItem,
+            this.copierToolStripMenuItem,
+            this.collerToolStripMenuItem,
+            this.toolStripSeparator13,
+            this.toolStripMenuItem13,
+            this.toolStripMenuItem14,
+            this.toolStripSeparator14,
+            this.rechercherToolStripMenuItem});
+            this.toolStripMenuItem9.Name = "toolStripMenuItem9";
+            this.toolStripMenuItem9.Size = new System.Drawing.Size(113, 31);
+            this.toolStripMenuItem9.Text = "Rechercher";
+            // 
+            // couperToolStripMenuItem
+            // 
+            this.couperToolStripMenuItem.Name = "couperToolStripMenuItem";
+            this.couperToolStripMenuItem.Size = new System.Drawing.Size(295, 34);
+            this.couperToolStripMenuItem.Text = "Couper     Ctrl+Shift+X";
+            // 
+            // copierToolStripMenuItem
+            // 
+            this.copierToolStripMenuItem.Name = "copierToolStripMenuItem";
+            this.copierToolStripMenuItem.Size = new System.Drawing.Size(295, 34);
+            this.copierToolStripMenuItem.Text = "Copier      Ctrl+Shift+C";
+            // 
+            // collerToolStripMenuItem
+            // 
+            this.collerToolStripMenuItem.Name = "collerToolStripMenuItem";
+            this.collerToolStripMenuItem.Size = new System.Drawing.Size(295, 34);
+            this.collerToolStripMenuItem.Text = "Coller       Ctrl+Shift+V";
+            // 
+            // toolStripSeparator13
+            // 
+            this.toolStripSeparator13.Name = "toolStripSeparator13";
+            this.toolStripSeparator13.Size = new System.Drawing.Size(292, 6);
+            // 
+            // toolStripMenuItem13
+            // 
+            this.toolStripMenuItem13.Name = "toolStripMenuItem13";
+            this.toolStripMenuItem13.Size = new System.Drawing.Size(295, 34);
+            this.toolStripMenuItem13.Text = "Effacer";
+            // 
+            // toolStripMenuItem14
+            // 
+            this.toolStripMenuItem14.Name = "toolStripMenuItem14";
+            this.toolStripMenuItem14.Size = new System.Drawing.Size(295, 34);
+            this.toolStripMenuItem14.Text = "Selectionner    Ctrl+A";
+            // 
+            // toolStripSeparator14
+            // 
+            this.toolStripSeparator14.Name = "toolStripSeparator14";
+            this.toolStripSeparator14.Size = new System.Drawing.Size(292, 6);
+            // 
+            // rechercherToolStripMenuItem
+            // 
+            this.rechercherToolStripMenuItem.Name = "rechercherToolStripMenuItem";
+            this.rechercherToolStripMenuItem.Size = new System.Drawing.Size(295, 34);
+            this.rechercherToolStripMenuItem.Text = "Rechercher";
             // 
             // toolStrip1
             // 
