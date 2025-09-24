@@ -1,0 +1,17 @@
+# Dossier Visual Studio
+.vs/
+*.vsidx
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Binaires de compilation
+bin/
+obj/
+Debug/
+Release/
+
+# Autres fichiers temporaires
+*.log
+*.tmp
