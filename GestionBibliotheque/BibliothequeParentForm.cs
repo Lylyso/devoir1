@@ -8,7 +8,8 @@
     Assembly:       BibliothequeParentForm.exe
     Classe:         BibliothequeParentForm.cs
 
-*/
+   */
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,26 +33,30 @@ namespace GestionBibliotheque
             InitializeComponent();
         }
 
+        #region Variables
+
+        private int nbClient = 1;
+        private OpenFileDialog ofd;
+
+        #endregion
+
         #region Load
         private void BibliothequeParentForm_Load(object sender, EventArgs e)
-        {
-            
-            try
-            {
-                // Initialiser la boîte de dialogue Ouvrir
-                openFileDialog = new OpenFileDialog();
-                openFileDialog.Filter = "Documents RTF (*.rtf)|*.rtf|Tous les fichiers (*.*)|*.*";
-                openFileDialog.AddExtension = true;
-                openFileDialog.CheckFileExists = true;
-                openFileDialog.CheckPathExists = true;
-                openFileDialog.DefaultExt = "rtf";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erreur lors de l’initialisation : " + ex.Message,
-                                "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+        { 
         }
+
+
+           private void Parent_Load(object sender, EventArgs e)
+            {
+            AfficherIcones();
+            ofd = new OpenFileDialog();
+            ofd.Filter = "Rich Text Format (*.rtf)|*.rtf|Tous les fichiers (*.*)|*.*";
+            ofd.AddExtension = true;
+            ofd.CheckFileExists = true;
+            ofd.CheckPathExists = true;
+            ofd.DefaultExt = "rtf";
+        }
+        
         #endregion
 
         #region Methode afficher images
