@@ -223,7 +223,7 @@ namespace GestionBibliotheque
             {
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    string fichier = openFileDialog.FileName;
+                    string fichier = openFileDialog.FileName;       
 
                     // Vérification de l’extension
                     if (Path.GetExtension(fichier).ToLower() != ".rtf")

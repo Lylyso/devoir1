@@ -170,9 +170,6 @@ namespace GestionBibliotheque
         }
         #endregion
 
-        private void LivreEnfantForm_Load(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }
