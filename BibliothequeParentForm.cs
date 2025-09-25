@@ -43,20 +43,17 @@ namespace GestionBibliotheque
         #region Load
         private void BibliothequeParentForm_Load(object sender, EventArgs e)
         {
-        }
-
-
-        private void Parent_Load(object sender, EventArgs e)
-        {
             AfficherIcones();
-            ofd = new OpenFileDialog();
-            ofd.Filter = "Rich Text Format (*.rtf)|*.rtf|Tous les fichiers (*.*)|*.*";
-            ofd.AddExtension = true;
-            ofd.CheckFileExists = true;
-            ofd.CheckPathExists = true;
-            ofd.DefaultExt = "rtf";
+            openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Rich Text Format (*.rtf)|*.rtf|Tous les fichiers (*.*)|*.*";
+            openFileDialog.AddExtension = true;
+            openFileDialog.CheckFileExists = true;
+            openFileDialog.CheckPathExists = true;
+            openFileDialog.DefaultExt = "rtf";
         }
 
+
+      
         #endregion
 
         #region Methode afficher images
@@ -223,7 +220,7 @@ namespace GestionBibliotheque
             {
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    string fichier = openFileDialog.FileName;       
+                    string fichier = OuvrirFileOpenFileDialog.FileName;       
 
                     // Vérification de l’extension
                     if (Path.GetExtension(fichier).ToLower() != ".rtf")
@@ -316,30 +313,7 @@ namespace GestionBibliotheque
         #region Méthodes Sauvegarde
 
         // Méthode Enregistrée ( vérifie enfant actif
-        private void EnregistréeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (this.ActiveMdiChild is LivreEnfantForm enfant)
-                {
-                    if (enfant.Enregistrement) // déjà enregistré
-                        Enregistrer(enfant, enfant.Text);
-                    else
-                        EnregistrerSous(enfant);
-                }
-                else
-                {
-                    MessageBox.Show("Aucun formulaire actif pour enregistrer.",
-                                    "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erreur lors de l’enregistrement : " + ex.Message,
-                                "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
+      
         // Méthode Enregistrer
         private void Enregistrer(LivreEnfantForm enfant, string fichier)
         {

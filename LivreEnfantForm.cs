@@ -28,6 +28,7 @@ namespace GestionBibliotheque
 
         #endregion
 
+        #region Constructeur
         public LivreEnfantForm()
         {
             InitializeComponent();
@@ -40,7 +41,7 @@ namespace GestionBibliotheque
             nbrJoursTextBox4.TextChanged += Zones_TextChanged;
             richTextBox.TextChanged += Zones_TextChanged;
         }
-
+        #endregion
         #region Form_Closing
         private void LivreEnfantForm_FormClosing(object sender, FormClosingEventArgs e)
         {

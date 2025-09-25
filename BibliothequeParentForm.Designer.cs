@@ -94,6 +94,7 @@
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.gaucheToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.droiteToolStripPanel = new System.Windows.Forms.ToolStripPanel();
+            this.OuvrirFileOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.hautToolStripPanel.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -110,7 +111,8 @@
             this.hautToolStripPanel.Name = "hautToolStripPanel";
             this.hautToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
             this.hautToolStripPanel.RowMargin = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.hautToolStripPanel.Size = new System.Drawing.Size(1478, 89);
+            this.hautToolStripPanel.Size = new System.Drawing.Size(1232, 68);
+            this.hautToolStripPanel.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.QuatrePaneaux_ControlAdded);
             // 
             // menuStrip1
             // 
@@ -131,7 +133,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1478, 35);
+            this.menuStrip1.Size = new System.Drawing.Size(1232, 35);
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -162,12 +164,14 @@
             this.OuvrirToolStripMenuItem.Name = "OuvrirToolStripMenuItem";
             this.OuvrirToolStripMenuItem.Size = new System.Drawing.Size(283, 34);
             this.OuvrirToolStripMenuItem.Text = "Ouvrir...           Ctrl+O";
+            this.OuvrirToolStripMenuItem.Click += new System.EventHandler(this.OuvrirToolStripMenuItem_Click_1);
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
             this.toolStripMenuItem5.Size = new System.Drawing.Size(283, 34);
             this.toolStripMenuItem5.Text = "Fermer";
+            this.toolStripMenuItem5.Click += new System.EventHandler(this.FermerToolStripMenuItem_Click);
             // 
             // toolStripSeparator10
             // 
@@ -179,12 +183,14 @@
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
             this.toolStripMenuItem6.Size = new System.Drawing.Size(283, 34);
             this.toolStripMenuItem6.Text = "Enregistrer      Ctrl+S";
+            this.toolStripMenuItem6.Click += new System.EventHandler(this.enregistrerToolStripMenuItem_Click);
             // 
             // EnregistrerSousToolStripMenuItem
             // 
             this.EnregistrerSousToolStripMenuItem.Name = "EnregistrerSousToolStripMenuItem";
             this.EnregistrerSousToolStripMenuItem.Size = new System.Drawing.Size(283, 34);
             this.EnregistrerSousToolStripMenuItem.Text = "Enregistrer sous...";
+            this.EnregistrerSousToolStripMenuItem.Click += new System.EventHandler(this.EnregistrerSousToolStripMenuItem_Click);
             // 
             // toolStripSeparator11
             // 
@@ -196,6 +202,7 @@
             this.toolStripMenuItem8.Name = "toolStripMenuItem8";
             this.toolStripMenuItem8.Size = new System.Drawing.Size(283, 34);
             this.toolStripMenuItem8.Text = "Quitter";
+            this.toolStripMenuItem8.Click += new System.EventHandler(this.QuitterToolStripMenuItem_Click);
             // 
             // toolStripMenuItem9
             // 
@@ -273,27 +280,27 @@
             this.systemeToolStripMenuItem,
             this.gestionnaireToolStripMenuItem20});
             this.outilsToolStripMenuItem.Name = "outilsToolStripMenuItem";
-            this.outilsToolStripMenuItem.Size = new System.Drawing.Size(217, 34);
+            this.outilsToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.outilsToolStripMenuItem.Text = "Barre d\'outils";
             // 
             // professionnelToolStripMenuItem
             // 
             this.professionnelToolStripMenuItem.Name = "professionnelToolStripMenuItem";
-            this.professionnelToolStripMenuItem.Size = new System.Drawing.Size(220, 34);
+            this.professionnelToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.professionnelToolStripMenuItem.Text = "Professionnel";
             this.professionnelToolStripMenuItem.Click += new System.EventHandler(this.professionnelToolStripMenuItem_Click);
             // 
             // systemeToolStripMenuItem
             // 
             this.systemeToolStripMenuItem.Name = "systemeToolStripMenuItem";
-            this.systemeToolStripMenuItem.Size = new System.Drawing.Size(220, 34);
+            this.systemeToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.systemeToolStripMenuItem.Text = "Systeme";
             this.systemeToolStripMenuItem.Click += new System.EventHandler(this.professionnelToolStripMenuItem_Click);
             // 
             // gestionnaireToolStripMenuItem20
             // 
             this.gestionnaireToolStripMenuItem20.Name = "gestionnaireToolStripMenuItem20";
-            this.gestionnaireToolStripMenuItem20.Size = new System.Drawing.Size(220, 34);
+            this.gestionnaireToolStripMenuItem20.Size = new System.Drawing.Size(270, 34);
             this.gestionnaireToolStripMenuItem20.Text = "Gestionnaire";
             this.gestionnaireToolStripMenuItem20.Click += new System.EventHandler(this.professionnelToolStripMenuItem_Click);
             // 
@@ -308,7 +315,7 @@
             // toolStripMenuItem22
             // 
             this.toolStripMenuItem22.Name = "toolStripMenuItem22";
-            this.toolStripMenuItem22.Size = new System.Drawing.Size(220, 34);
+            this.toolStripMenuItem22.Size = new System.Drawing.Size(270, 34);
             this.toolStripMenuItem22.Text = "Date et heure";
             // 
             // toolStripMenuItem23
@@ -322,7 +329,7 @@
             // toolStripMenuItem24
             // 
             this.toolStripMenuItem24.Name = "toolStripMenuItem24";
-            this.toolStripMenuItem24.Size = new System.Drawing.Size(159, 34);
+            this.toolStripMenuItem24.Size = new System.Drawing.Size(270, 34);
             this.toolStripMenuItem24.Text = "Police";
             // 
             // fenetreToolStripMenuItem
@@ -342,6 +349,7 @@
             this.cascadeToolStripMenuItem.Name = "cascadeToolStripMenuItem";
             this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(288, 34);
             this.cascadeToolStripMenuItem.Text = "Cascade";
+            this.cascadeToolStripMenuItem.Click += new System.EventHandler(this.fenetreToolStripMenuItem_Click);
             // 
             // mosaiqueHToolStripMenuItem
             // 
@@ -349,6 +357,7 @@
             this.mosaiqueHToolStripMenuItem.Name = "mosaiqueHToolStripMenuItem";
             this.mosaiqueHToolStripMenuItem.Size = new System.Drawing.Size(288, 34);
             this.mosaiqueHToolStripMenuItem.Text = "Mosaique horizontale";
+            this.mosaiqueHToolStripMenuItem.Click += new System.EventHandler(this.fenetreToolStripMenuItem_Click);
             // 
             // mosaiqueVToolStripMenuItem
             // 
@@ -356,6 +365,7 @@
             this.mosaiqueVToolStripMenuItem.Name = "mosaiqueVToolStripMenuItem";
             this.mosaiqueVToolStripMenuItem.Size = new System.Drawing.Size(288, 34);
             this.mosaiqueVToolStripMenuItem.Text = "Mosaique verticale";
+            this.mosaiqueVToolStripMenuItem.Click += new System.EventHandler(this.fenetreToolStripMenuItem_Click);
             // 
             // iconesToolStripMenuItem
             // 
@@ -363,6 +373,7 @@
             this.iconesToolStripMenuItem.Name = "iconesToolStripMenuItem";
             this.iconesToolStripMenuItem.Size = new System.Drawing.Size(288, 34);
             this.iconesToolStripMenuItem.Text = "Reorganiser les icones";
+            this.iconesToolStripMenuItem.Click += new System.EventHandler(this.fenetreToolStripMenuItem_Click);
             // 
             // toolStripMenuItem30
             // 
@@ -580,6 +591,7 @@
             this.basToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
             this.basToolStripPanel.RowMargin = new System.Windows.Forms.Padding(4, 0, 0, 0);
             this.basToolStripPanel.Size = new System.Drawing.Size(1232, 47);
+            this.basToolStripPanel.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.QuatrePaneaux_ControlAdded);
             // 
             // ficheStatusStrip1
             // 
@@ -626,6 +638,7 @@
             this.gaucheToolStripPanel.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.gaucheToolStripPanel.RowMargin = new System.Windows.Forms.Padding(0, 4, 0, 0);
             this.gaucheToolStripPanel.Size = new System.Drawing.Size(0, 833);
+            this.gaucheToolStripPanel.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.QuatrePaneaux_ControlAdded);
             // 
             // droiteToolStripPanel
             // 
@@ -635,6 +648,11 @@
             this.droiteToolStripPanel.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.droiteToolStripPanel.RowMargin = new System.Windows.Forms.Padding(0, 4, 0, 0);
             this.droiteToolStripPanel.Size = new System.Drawing.Size(0, 833);
+            this.droiteToolStripPanel.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.QuatrePaneaux_ControlAdded);
+            // 
+            // OuvrirFileOpenFileDialog
+            // 
+            this.OuvrirFileOpenFileDialog.FileName = "openFileDialog1";
             // 
             // BibliothequeParentForm
             // 
@@ -730,6 +748,7 @@
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
         private System.Windows.Forms.ToolStripMenuItem uneQuestionToolStripMenuItem;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
+        private System.Windows.Forms.OpenFileDialog OuvrirFileOpenFileDialog;
     }
 }
 
