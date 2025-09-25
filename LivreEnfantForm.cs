@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 
 
@@ -22,19 +24,21 @@ namespace GestionBibliotheque
         public TextBox ClasseTextBox { get { return classeTextBox2; } }
         public TextBox TitreTextBox { get { return titreLivreTextBox3; } }
         public TextBox JoursTextBox { get { return nbrJoursTextBox4; } }
-        public TextBox RaisonRichTextBox { get { return raisonTextBox5; } }
+        public RichTextBox RaisonRichTextBox { get { return richTextBox; } }
+
         #endregion
 
         public LivreEnfantForm()
         {
             InitializeComponent();
-
+            Modification = false;
+            Enregistrement = false;
             // Détecter modifications
             nomTextBox1.TextChanged += Zones_TextChanged;
             classeTextBox2.TextChanged += Zones_TextChanged;
             titreLivreTextBox3.TextChanged += Zones_TextChanged;
             nbrJoursTextBox4.TextChanged += Zones_TextChanged;
-            raisonTextBox5.TextChanged += Zones_TextChanged;
+            richTextBox.TextChanged += Zones_TextChanged;
         }
 
         #region Form_Closing
@@ -87,7 +91,7 @@ namespace GestionBibliotheque
                     else
                     {
                         RichTextBox temp = new RichTextBox();
-                        temp.Rtf = raisonTextBox5.Rtf;
+                        temp.Rtf = richTextBox.Rtf;
 
                         // Insérer infos de l’étudiant + livre
                         temp.SelectionStart = 0;
@@ -110,6 +114,7 @@ namespace GestionBibliotheque
             }
         }
         #endregion
+        //logic for saving the file with a SaveFileDialog
 
         #region Méthode EnregistrerSous
         public void EnregistrerSous()
@@ -134,7 +139,7 @@ namespace GestionBibliotheque
                     }
 
                     RichTextBox temp = new RichTextBox();
-                    temp.Rtf = raisonTextBox5.Rtf;
+                    temp.Rtf = richTextBox.Rtf;
 
                     temp.SelectionStart = 0;
                     temp.SelectionLength = 0;
@@ -164,5 +169,10 @@ namespace GestionBibliotheque
             Modification = true;
         }
         #endregion
+
+        private void LivreEnfantForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

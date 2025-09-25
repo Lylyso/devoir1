@@ -335,7 +335,6 @@
             this.fenetreToolStripMenuItem.Name = "fenetreToolStripMenuItem";
             this.fenetreToolStripMenuItem.Size = new System.Drawing.Size(86, 32);
             this.fenetreToolStripMenuItem.Text = "Fenetre";
-            this.fenetreToolStripMenuItem.Click += new System.EventHandler(this.toolStripMenuItem25_Click);
             // 
             // cascadeToolStripMenuItem
             // 
@@ -343,7 +342,6 @@
             this.cascadeToolStripMenuItem.Name = "cascadeToolStripMenuItem";
             this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(288, 34);
             this.cascadeToolStripMenuItem.Text = "Cascade";
-            this.cascadeToolStripMenuItem.Click += new System.EventHandler(this.toolStripMenuItem25_Click);
             // 
             // mosaiqueHToolStripMenuItem
             // 
@@ -351,7 +349,6 @@
             this.mosaiqueHToolStripMenuItem.Name = "mosaiqueHToolStripMenuItem";
             this.mosaiqueHToolStripMenuItem.Size = new System.Drawing.Size(288, 34);
             this.mosaiqueHToolStripMenuItem.Text = "Mosaique horizontale";
-            this.mosaiqueHToolStripMenuItem.Click += new System.EventHandler(this.toolStripMenuItem25_Click);
             // 
             // mosaiqueVToolStripMenuItem
             // 
@@ -359,7 +356,6 @@
             this.mosaiqueVToolStripMenuItem.Name = "mosaiqueVToolStripMenuItem";
             this.mosaiqueVToolStripMenuItem.Size = new System.Drawing.Size(288, 34);
             this.mosaiqueVToolStripMenuItem.Text = "Mosaique verticale";
-            this.mosaiqueVToolStripMenuItem.Click += new System.EventHandler(this.toolStripMenuItem25_Click);
             // 
             // iconesToolStripMenuItem
             // 
@@ -367,7 +363,6 @@
             this.iconesToolStripMenuItem.Name = "iconesToolStripMenuItem";
             this.iconesToolStripMenuItem.Size = new System.Drawing.Size(288, 34);
             this.iconesToolStripMenuItem.Text = "Reorganiser les icones";
-            this.iconesToolStripMenuItem.Click += new System.EventHandler(this.toolStripMenuItem25_Click);
             // 
             // toolStripMenuItem30
             // 
