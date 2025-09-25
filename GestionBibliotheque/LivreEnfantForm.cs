@@ -113,6 +113,7 @@ namespace GestionBibliotheque
             }
         }
         #endregion
+        //logic for saving the file with a SaveFileDialog
 
         #region Méthode EnregistrerSous
         public void EnregistrerSous()
