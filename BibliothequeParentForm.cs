@@ -32,7 +32,7 @@ namespace GestionBibliotheque
         {
             InitializeComponent();
         }
-
+        //kjlkj;
         #region Variables
 
         private int nbClient = 1;
