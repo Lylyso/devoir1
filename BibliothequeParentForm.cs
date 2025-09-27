@@ -1,6 +1,6 @@
 ﻿/*
     Programmeur:    Lydianne, Mohamed, Labib
-    Date:           Septembre 2025
+    Date:           Septembre 
 
     Solution:       BibliothequeParentForm.sln
     Projet:         BibliothequeParentForm.csproj
