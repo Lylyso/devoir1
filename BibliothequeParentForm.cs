@@ -53,7 +53,7 @@ namespace GestionBibliotheque
         }
 
 
-      
+
         #endregion
 
         #region Methode afficher images
@@ -220,7 +220,7 @@ namespace GestionBibliotheque
             {
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    string fichier = OuvrirFileOpenFileDialog.FileName;       
+                    string fichier = OuvrirFileOpenFileDialog.FileName;
 
                     // Vérification de l’extension
                     if (Path.GetExtension(fichier).ToLower() != ".rtf")
@@ -313,7 +313,7 @@ namespace GestionBibliotheque
         #region Méthodes Sauvegarde
 
         // Méthode Enregistrée ( vérifie enfant actif
-      
+
         // Méthode Enregistrer
         private void Enregistrer(LivreEnfantForm enfant, string fichier)
         {
@@ -398,5 +398,71 @@ namespace GestionBibliotheque
 
         }
         //test branches
+    
+    private void RichTextBox_SelectionChanged(object sender, EventArgs e)
+        {
+            RichTextBox rtb = sender as RichTextBox;
+            if (rtb == null) return;
+
+            // Vérifier le style de police
+            Font currentFont = rtb.SelectionFont ?? rtb.Font;
+
+            grasToolStripButton.Checked = currentFont.Bold;
+            italiqueToolStripButton.Checked = currentFont.Italic;
+            souligneToolStripButton.Checked = currentFont.Underline;
+
+            // Activer  et désactiver Couper, Copier, Coller
+            couperToolStripMenuItem.Enabled = rtb.SelectionLength > 0;
+            copierToolStripMenuItem.Enabled = rtb.SelectionLength > 0;
+            collerToolStripMenuItem.Enabled = Clipboard.ContainsText();
+
+            //  Vérifier l’alignement
+            switch (rtb.SelectionAlignment)
+            {
+                case HorizontalAlignment.Left:
+                    gaucheToolStripButton.Checked = true;
+                    centreToolStripButton.Checked = false;
+                    droiteToolStripButton.Checked = false;
+                    break;
+                case HorizontalAlignment.Center:
+                    gaucheToolStripButton.Checked = false;
+                    centreToolStripButton.Checked = true;
+                    droiteToolStripButton.Checked = false;
+                    break;
+                case HorizontalAlignment.Right:
+                    gaucheToolStripButton.Checked = false;
+                    centreToolStripButton.Checked = false;
+                    droiteToolStripButton.Checked = true;
+                    break;
+            }
+        }
+        private void LivreEnfantForm_Activated(object sender, EventArgs e)
+        {
+            if (this.ActiveControl is RichTextBox rtb)
+            {
+                RichTextBox_SelectionChanged(rtb, EventArgs.Empty);
+            }
+        }
+        private void ChangerAttributsPolice(FontStyle style, bool activer)
+        {
+            if (this.ActiveMdiChild is LivreEnfantForm enfant)
+            {
+                RichTextBox rtb = enfant.RaisonRichTextBox;
+
+                if (rtb.SelectionFont != null)
+                {
+                    FontStyle newStyle = rtb.SelectionFont.Style;
+
+                    if (activer)
+                        newStyle |= style;   // Ajoute le style
+                    else
+                        newStyle &= ~style;  // Enlève le style
+
+                    rtb.SelectionFont = new Font(rtb.SelectionFont, newStyle);
+                }
+            }
+        }
+
     }
-}
+
+    }
