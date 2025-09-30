@@ -264,11 +264,6 @@ namespace GestionBibliotheque
                                 "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-    #endregion
-
-
-        #endregion
-
         #endregion
 
         #region enregistrer
