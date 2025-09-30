@@ -165,6 +165,44 @@ namespace GestionBibliotheque
         }
         #endregion
 
+        #region style MenuStrip
+
+        private void professionnelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //caster le sender en ToolStripMenuItem
+            ToolStripMenuItem clickedItem = sender as ToolStripMenuItem;
+            if (clickedItem == null) return;
+
+            // Trouver le menu parent car on travail avec un sous-menu
+            ToolStripMenuItem parentMenu = (ToolStripMenuItem)clickedItem.OwnerItem;
+
+            // Trouver l’index de l’item cliqué dans le sous-menu
+            int index = parentMenu.DropDownItems.IndexOf(clickedItem);
+
+            // Enlever crochets 
+            foreach (ToolStripMenuItem item in parentMenu.DropDownItems)
+                item.Checked = false;
+
+            clickedItem.Checked = true;
+
+            // Changer le RenderMode selon l’index
+            if (index == 0)
+            {
+                menuStrip1.RenderMode = ToolStripRenderMode.Professional;
+            }
+            else if (index == 1)
+            {
+                menuStrip1.RenderMode = ToolStripRenderMode.System;
+            }
+            else if (index == 2)
+            {
+                menuStrip1.RenderMode = ToolStripRenderMode.ManagerRenderMode; // CORRECT
+            }
+        }
+
+
+        #endregion
+
         #region Fermer / Quitter
         private void FermerToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -194,9 +232,105 @@ namespace GestionBibliotheque
         }
         #endregion
 
-      
+        #region Méthodes Sauvegarde
+
+        // Méthode Enregistrée ( vérifie enfant actif
+        private void EnregistréeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.ActiveMdiChild is LivreEnfantForm enfant)
+                {
+                    if (enfant.Enregistrement) // déjà enregistré
+                        Enregistrer(enfant, enfant.Text);
+                    else
+                        EnregistrerSous(enfant);
+                }
+                else
+                {
+                    MessageBox.Show("Aucun formulaire actif pour enregistrer.",
+                                    "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de l’enregistrement : " + ex.Message,
+                                "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // Méthode Enregistrer
+        private void Enregistrer(LivreEnfantForm enfant, string fichier)
+        {
+            try
+            {
+                if (enfant.Modification)
+                {
+                    RichTextBox temp = new RichTextBox();
+
+                    // copier les zones de texte dans temp
+                    temp.Clear();
+                    temp.AppendText(enfant.NomTextBox.Text + "\n");
+                    temp.AppendText(enfant.ClasseTextBox.Text + "\n");
+                    temp.AppendText(enfant.TitreTextBox.Text + "\n");
+                    temp.AppendText(enfant.JoursTextBox.Text + "\n");
+
+                    // ajouter le RTF de la raison
+                    temp.Rtf += enfant.RaisonRichTextBox.Rtf;
+
+                    temp.SaveFile(fichier, RichTextBoxStreamType.RichText);
+
+                    enfant.Modification = false;
+                    enfant.Enregistrement = true;
+
+                    MessageBox.Show("Fichier enregistré avec succès.", "Succès",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur dans Enregistrer : " + ex.Message,
+                                "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // Méthode EnregistrerSous
+        private void EnregistrerSous(LivreEnfantForm enfant)
+        {
+            try
+            {
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Documents RTF (*.rtf)|*.rtf";
+                saveFileDialog.DefaultExt = "rtf";
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string fichier = saveFileDialog.FileName;
+
+                    // Vérifier l’extension
+                    if (Path.GetExtension(fichier).ToLower() != ".rtf")
+                    {
+                        MessageBox.Show("Le fichier doit avoir l’extension .rtf",
+                                        "Erreur Extension", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    Enregistrer(enfant, fichier);
+                    enfant.Text = fichier;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur dans EnregistrerSous : " + ex.Message,
+                                "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        #endregion
+
         #region Edition_Click()
-        private void Edition_Click(object sender, EventArgs e)
+        private void EditionText_Click(object sender, EventArgs e)
         {
             try
             {
@@ -266,31 +400,37 @@ namespace GestionBibliotheque
         }
         #endregion
 
+        #region Alignement_Click()
 
-
-    #region enregistrer
-        private void enregistrerToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Alignement_Click(object sender, EventArgs e)
         {
-            enregistrerToolStripMenuItem_Click(sender, e);
+            try
+            {
+                if (this.ActiveMdiChild is LivreEnfantForm oEnfant)
+                {
+                    RichTextBox oRichTextBox = oEnfant.RaisonRichTextBox;
+                    if (sender == alignementGaucheToolStripButton)
+                    {
+                        oRichTextBox.SelectionAlignment = HorizontalAlignment.Left;
+                    }
+                    else if (sender == alignementMilieuToolStripButtons)
+                    {
+                        oRichTextBox.SelectionAlignment = HorizontalAlignment.Center;
+                    }
+                    else if (sender == alignementDroiteToolStripButton)
+                    {
+                        oRichTextBox.SelectionAlignment = HorizontalAlignment.Right;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur Allinement_Click : " + ex.Message,
+                                "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void EnregistrerSousToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (this.ActiveMdiChild is LivreEnfantForm enfant)
-                EnregistrerSous(enfant);
-
-        }
-
-    #endregion
-
-
-    #region Allignement texte
-        private void allignementGaucheToolStripButton_Click(object sender, EventArgs e)
-        {
-            //utilisation d'un bloc try catch pour gerer les erreurs
-
-        }
-    #endregion
+        #endregion
 
     }
 }
