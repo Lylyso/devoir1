@@ -266,6 +266,30 @@ namespace GestionBibliotheque
         }
         #endregion
 
+        #region enregistrer
+        private void enregistrerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            enregistrerToolStripMenuItem_Click(sender, e);
+        }
+
+        private void EnregistrerSousToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.ActiveMdiChild is LivreEnfantForm enfant)
+                EnregistrerSous(enfant);
+
+        }
+
+        #endregion
+
+
+        #region Allignement texte
+        private void allignementGaucheToolStripButton_Click(object sender, EventArgs e)
+        {
+            //utilisation d'un bloc try catch pour gerer les erreurs
+
+        }
+        #endregion
+
     }
 }
 
