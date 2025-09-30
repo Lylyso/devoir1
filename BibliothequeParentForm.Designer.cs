@@ -45,7 +45,7 @@
             this.copierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.collerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripMenuItem13 = new System.Windows.Forms.ToolStripMenuItem();
+            this.effacerToolStripButton = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem14 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
             this.rechercherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,16 +71,16 @@
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.couperToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.copierToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.collerToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripComboBox3 = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripComboBox4 = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
             this.boldToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.italicToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.underlignToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.underlineToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
             this.allignementGaucheToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.allignementMilieuToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -204,7 +204,7 @@
             this.copierToolStripMenuItem,
             this.collerToolStripMenuItem,
             this.toolStripSeparator13,
-            this.toolStripMenuItem13,
+            this.effacerToolStripButton,
             this.toolStripMenuItem14,
             this.toolStripSeparator14,
             this.rechercherToolStripMenuItem});
@@ -235,11 +235,11 @@
             this.toolStripSeparator13.Name = "toolStripSeparator13";
             this.toolStripSeparator13.Size = new System.Drawing.Size(292, 6);
             // 
-            // toolStripMenuItem13
+            // effacerToolStripButton
             // 
-            this.toolStripMenuItem13.Name = "toolStripMenuItem13";
-            this.toolStripMenuItem13.Size = new System.Drawing.Size(295, 34);
-            this.toolStripMenuItem13.Text = "Effacer";
+            this.effacerToolStripButton.Name = "effacerToolStripButton";
+            this.effacerToolStripButton.Size = new System.Drawing.Size(295, 34);
+            this.effacerToolStripButton.Text = "Effacer";
             // 
             // toolStripMenuItem14
             // 
@@ -392,16 +392,16 @@
             this.toolStripButton2,
             this.toolStripButton3,
             this.toolStripSeparator12,
-            this.toolStripButton4,
-            this.toolStripButton5,
-            this.toolStripButton7,
+            this.couperToolStripButton,
+            this.copierToolStripButton,
+            this.collerToolStripButton,
             this.toolStripSeparator15,
             this.toolStripComboBox3,
             this.toolStripComboBox4,
             this.toolStripSeparator16,
             this.boldToolStripButton,
             this.italicToolStripButton,
-            this.underlignToolStripButton,
+            this.underlineToolStripButton,
             this.toolStripSeparator17,
             this.allignementGaucheToolStripButton,
             this.allignementMilieuToolStripButton,
@@ -447,32 +447,32 @@
             this.toolStripSeparator12.Name = "toolStripSeparator12";
             this.toolStripSeparator12.Size = new System.Drawing.Size(6, 33);
             // 
-            // toolStripButton4
+            // couperToolStripButton
             // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(34, 28);
-            this.toolStripButton4.Text = "couperToolStripButton4";
+            this.couperToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.couperToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("couperToolStripButton.Image")));
+            this.couperToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.couperToolStripButton.Name = "couperToolStripButton";
+            this.couperToolStripButton.Size = new System.Drawing.Size(34, 28);
+            this.couperToolStripButton.Text = "couperToolStripButton";
             // 
-            // toolStripButton5
+            // copierToolStripButton
             // 
-            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(34, 28);
-            this.toolStripButton5.Text = "toolStripButton5";
+            this.copierToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.copierToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("copierToolStripButton.Image")));
+            this.copierToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.copierToolStripButton.Name = "copierToolStripButton";
+            this.copierToolStripButton.Size = new System.Drawing.Size(34, 28);
+            this.copierToolStripButton.Text = "toolStripButton5";
             // 
-            // toolStripButton7
+            // collerToolStripButton
             // 
-            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
-            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(34, 28);
-            this.toolStripButton7.Text = "toolStripButton6";
+            this.collerToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.collerToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("collerToolStripButton.Image")));
+            this.collerToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.collerToolStripButton.Name = "collerToolStripButton";
+            this.collerToolStripButton.Size = new System.Drawing.Size(34, 28);
+            this.collerToolStripButton.Text = "toolStripButton6";
             // 
             // toolStripSeparator15
             // 
@@ -513,14 +513,14 @@
             this.italicToolStripButton.Text = "toolStripButton8";
             this.italicToolStripButton.ToolTipText = "italiqueToolStripButton8";
             // 
-            // underlignToolStripButton
+            // underlineToolStripButton
             // 
-            this.underlignToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.underlignToolStripButton.Image = global::GestionBibliotheque.Properties.Resources.underline;
-            this.underlignToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.underlignToolStripButton.Name = "underlignToolStripButton";
-            this.underlignToolStripButton.Size = new System.Drawing.Size(34, 28);
-            this.underlignToolStripButton.Text = "underlineToolStripButton9";
+            this.underlineToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.underlineToolStripButton.Image = global::GestionBibliotheque.Properties.Resources.underline;
+            this.underlineToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.underlineToolStripButton.Name = "underlineToolStripButton";
+            this.underlineToolStripButton.Size = new System.Drawing.Size(34, 28);
+            this.underlineToolStripButton.Text = "underlineToolStripButton9";
             // 
             // toolStripSeparator17
             // 
@@ -680,7 +680,7 @@
         private System.Windows.Forms.ToolStripMenuItem copierToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem collerToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem13;
+        private System.Windows.Forms.ToolStripMenuItem effacerToolStripButton;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem14;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator14;
         private System.Windows.Forms.ToolStripMenuItem rechercherToolStripMenuItem;
@@ -704,16 +704,16 @@
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
-        private System.Windows.Forms.ToolStripButton toolStripButton5;
-        private System.Windows.Forms.ToolStripButton toolStripButton7;
+        private System.Windows.Forms.ToolStripButton couperToolStripButton;
+        private System.Windows.Forms.ToolStripButton copierToolStripButton;
+        private System.Windows.Forms.ToolStripButton collerToolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator15;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox3;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox4;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator16;
         private System.Windows.Forms.ToolStripButton boldToolStripButton;
         private System.Windows.Forms.ToolStripButton italicToolStripButton;
-        private System.Windows.Forms.ToolStripButton underlignToolStripButton;
+        private System.Windows.Forms.ToolStripButton underlineToolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator17;
         private System.Windows.Forms.ToolStripButton allignementGaucheToolStripButton;
         private System.Windows.Forms.ToolStripButton allignementMilieuToolStripButton;
