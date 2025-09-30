@@ -45,6 +45,7 @@
             this.copierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.collerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
+
             this.effacerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toutSelectionnerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
@@ -85,6 +86,7 @@
             this.alignementGaucheToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.alignementMilieuToolStripButtons = new System.Windows.Forms.ToolStripButton();
             this.alignementDroiteToolStripButton = new System.Windows.Forms.ToolStripButton();
+
             this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton18 = new System.Windows.Forms.ToolStripButton();
             this.basToolStripPanel = new System.Windows.Forms.ToolStripPanel();
@@ -111,7 +113,9 @@
             this.hautToolStripPanel.Name = "hautToolStripPanel";
             this.hautToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
             this.hautToolStripPanel.RowMargin = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.hautToolStripPanel.Size = new System.Drawing.Size(1232, 68);
+
+            this.hautToolStripPanel.Size = new System.Drawing.Size(1227, 68);
+
             // 
             // menuStrip1
             // 
@@ -132,7 +136,9 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1232, 35);
+
+            this.menuStrip1.Size = new System.Drawing.Size(1227, 35);
+
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -210,6 +216,7 @@
             this.copierToolStripMenuItem,
             this.collerToolStripMenuItem,
             this.toolStripSeparator13,
+
             this.effacerToolStripMenuItem,
             this.toutSelectionnerToolStripMenuItem,
             this.toolStripSeparator14,
@@ -249,8 +256,7 @@
             this.effacerToolStripMenuItem.Name = "effacerToolStripMenuItem";
             this.effacerToolStripMenuItem.Size = new System.Drawing.Size(295, 34);
             this.effacerToolStripMenuItem.Text = "Effacer";
-            this.effacerToolStripMenuItem.Click += new System.EventHandler(this.EditionText_Click);
-            // 
+            this.effacerToolStripMenuItem.Click += new System.EventHandler(this.EditionText_Click); 
             // toutSelectionnerToolStripMenuItem
             // 
             this.toutSelectionnerToolStripMenuItem.Name = "toutSelectionnerToolStripMenuItem";
@@ -671,7 +677,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1232, 832);
+            this.ClientSize = new System.Drawing.Size(1227, 833);
+
             this.Controls.Add(this.hautToolStripPanel);
             this.Controls.Add(this.basToolStripPanel);
             this.Controls.Add(this.gaucheToolStripPanel);
@@ -714,8 +721,8 @@
         private System.Windows.Forms.ToolStripMenuItem copierToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem collerToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
-        private System.Windows.Forms.ToolStripMenuItem effacerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toutSelectionnerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem effacerToolStripButton;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem14;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator14;
         private System.Windows.Forms.ToolStripMenuItem rechercherToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem affichageToolStripMenuItem;
@@ -733,6 +740,28 @@
         private System.Windows.Forms.ToolStripMenuItem mosaiqueVToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem iconesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem30;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
+        private System.Windows.Forms.ToolStripButton couperToolStripButton;
+        private System.Windows.Forms.ToolStripButton copierToolStripButton;
+        private System.Windows.Forms.ToolStripButton collerToolStripButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator15;
+        private System.Windows.Forms.ToolStripComboBox toolStripComboBox3;
+        private System.Windows.Forms.ToolStripComboBox toolStripComboBox4;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator16;
+        private System.Windows.Forms.ToolStripButton boldToolStripButton;
+        private System.Windows.Forms.ToolStripButton italicToolStripButton;
+        private System.Windows.Forms.ToolStripButton underlineToolStripButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator17;
+        private System.Windows.Forms.ToolStripButton allignementGaucheToolStripButton;
+        private System.Windows.Forms.ToolStripButton allignementMilieuToolStripButton;
+        private System.Windows.Forms.ToolStripButton allignementDroitToolStripButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator18;
+        private System.Windows.Forms.ToolStripButton toolStripButton18;
+
         private System.Windows.Forms.ToolStripPanel basToolStripPanel;
         private System.Windows.Forms.StatusStrip ficheStatusStrip1;
         private System.Windows.Forms.ToolStripPanel gaucheToolStripPanel;
@@ -766,4 +795,3 @@
         private System.Windows.Forms.ToolStripButton toolStripButton18;
     }
 }
-
