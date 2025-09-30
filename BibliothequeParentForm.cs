@@ -165,6 +165,44 @@ namespace GestionBibliotheque
         }
         #endregion
 
+        #region style MenuStrip
+
+        private void professionnelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //caster le sender en ToolStripMenuItem
+            ToolStripMenuItem clickedItem = sender as ToolStripMenuItem;
+            if (clickedItem == null) return;
+
+            // Trouver le menu parent car on travail avec un sous-menu
+            ToolStripMenuItem parentMenu = (ToolStripMenuItem)clickedItem.OwnerItem;
+
+            // Trouver l’index de l’item cliqué dans le sous-menu
+            int index = parentMenu.DropDownItems.IndexOf(clickedItem);
+
+            // Enlever crochets 
+            foreach (ToolStripMenuItem item in parentMenu.DropDownItems)
+                item.Checked = false;
+
+            clickedItem.Checked = true;
+
+            // Changer le RenderMode selon l’index
+            if (index == 0)
+            {
+                menuStrip1.RenderMode = ToolStripRenderMode.Professional;
+            }
+            else if (index == 1)
+            {
+                menuStrip1.RenderMode = ToolStripRenderMode.System;
+            }
+            else if (index == 2)
+            {
+                menuStrip1.RenderMode = ToolStripRenderMode.ManagerRenderMode; // CORRECT
+            }
+        }
+
+
+        #endregion
+
         #region Fermer / Quitter
         private void FermerToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -292,7 +330,7 @@ namespace GestionBibliotheque
         #endregion
 
         #region Edition_Click()
-        private void Edition_Click(object sender, EventArgs e)
+        private void EditionText_Click(object sender, EventArgs e)
         {
             try
             {
@@ -362,7 +400,37 @@ namespace GestionBibliotheque
         }
         #endregion
 
-       
+        #region Alignement_Click()
+
+        private void Alignement_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.ActiveMdiChild is LivreEnfantForm oEnfant)
+                {
+                    RichTextBox oRichTextBox = oEnfant.RaisonRichTextBox;
+                    if (sender == alignementGaucheToolStripButton)
+                    {
+                        oRichTextBox.SelectionAlignment = HorizontalAlignment.Left;
+                    }
+                    else if (sender == alignementMilieuToolStripButtons)
+                    {
+                        oRichTextBox.SelectionAlignment = HorizontalAlignment.Center;
+                    }
+                    else if (sender == alignementDroiteToolStripButton)
+                    {
+                        oRichTextBox.SelectionAlignment = HorizontalAlignment.Right;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur Allinement_Click : " + ex.Message,
+                                "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        #endregion
     }
 }
 
