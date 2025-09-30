@@ -412,6 +412,7 @@ namespace GestionBibliotheque
 
         #endregion
 
+        #region enregistrer
         private void enregistrerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             enregistrerToolStripMenuItem_Click(sender, e);
@@ -423,5 +424,17 @@ namespace GestionBibliotheque
                 EnregistrerSous(enfant);
 
         }
+
+        #endregion
+
+
+        #region Allignement texte
+        private void allignementGaucheToolStripButton_Click(object sender, EventArgs e)
+        {
+            //utilisation d'un bloc try catch pour gerer les erreurs
+
+        }
+        #endregion
+
     }
 }
