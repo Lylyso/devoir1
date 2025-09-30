@@ -194,7 +194,103 @@ namespace GestionBibliotheque
         }
         #endregion
 
-      
+        #region Méthodes Sauvegarde
+
+        // Méthode Enregistrée ( vérifie enfant actif
+        private void EnregistréeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.ActiveMdiChild is LivreEnfantForm enfant)
+                {
+                    if (enfant.Enregistrement) // déjà enregistré
+                        Enregistrer(enfant, enfant.Text);
+                    else
+                        EnregistrerSous(enfant);
+                }
+                else
+                {
+                    MessageBox.Show("Aucun formulaire actif pour enregistrer.",
+                                    "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de l’enregistrement : " + ex.Message,
+                                "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // Méthode Enregistrer
+        private void Enregistrer(LivreEnfantForm enfant, string fichier)
+        {
+            try
+            {
+                if (enfant.Modification)
+                {
+                    RichTextBox temp = new RichTextBox();
+
+                    // copier les zones de texte dans temp
+                    temp.Clear();
+                    temp.AppendText(enfant.NomTextBox.Text + "\n");
+                    temp.AppendText(enfant.ClasseTextBox.Text + "\n");
+                    temp.AppendText(enfant.TitreTextBox.Text + "\n");
+                    temp.AppendText(enfant.JoursTextBox.Text + "\n");
+
+                    // ajouter le RTF de la raison
+                    temp.Rtf += enfant.RaisonRichTextBox.Rtf;
+
+                    temp.SaveFile(fichier, RichTextBoxStreamType.RichText);
+
+                    enfant.Modification = false;
+                    enfant.Enregistrement = true;
+
+                    MessageBox.Show("Fichier enregistré avec succès.", "Succès",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur dans Enregistrer : " + ex.Message,
+                                "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // Méthode EnregistrerSous
+        private void EnregistrerSous(LivreEnfantForm enfant)
+        {
+            try
+            {
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Documents RTF (*.rtf)|*.rtf";
+                saveFileDialog.DefaultExt = "rtf";
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string fichier = saveFileDialog.FileName;
+
+                    // Vérifier l’extension
+                    if (Path.GetExtension(fichier).ToLower() != ".rtf")
+                    {
+                        MessageBox.Show("Le fichier doit avoir l’extension .rtf",
+                                        "Erreur Extension", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    Enregistrer(enfant, fichier);
+                    enfant.Text = fichier;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur dans EnregistrerSous : " + ex.Message,
+                                "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        #endregion
+
         #region Edition_Click()
         private void Edition_Click(object sender, EventArgs e)
         {

@@ -30,6 +30,27 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BibliothequeParentForm));
             this.hautToolStripPanel = new System.Windows.Forms.ToolStripPanel();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
+            this.couperToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.copierToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.collerToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripComboBox3 = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripComboBox4 = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
+            this.boldToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.italicToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.underlineToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
+            this.allignementGaucheToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.allignementMilieuToolStripButtons = new System.Windows.Forms.ToolStripButton();
+            this.allignementDroiteToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton18 = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fichierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.NouveauToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,44 +95,213 @@
             this.gaucheToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.droiteToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.OuvrirFileOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
-            this.couperToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.copierToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.collerToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripComboBox3 = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripComboBox4 = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
-            this.boldToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.italicToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.underlineToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator17 = new System.Windows.Forms.ToolStripSeparator();
-            this.allignementGaucheToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.allignementMilieuToolStripButtons = new System.Windows.Forms.ToolStripButton();
-            this.allignementDroiteToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator18 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton18 = new System.Windows.Forms.ToolStripButton();
             this.hautToolStripPanel.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.basToolStripPanel.SuspendLayout();
             this.ficheStatusStrip1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // hautToolStripPanel
             // 
-            this.hautToolStripPanel.Controls.Add(this.toolStrip1);
             this.hautToolStripPanel.Controls.Add(this.menuStrip1);
+            this.hautToolStripPanel.Controls.Add(this.toolStrip1);
             this.hautToolStripPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.hautToolStripPanel.Location = new System.Drawing.Point(0, 0);
             this.hautToolStripPanel.Name = "hautToolStripPanel";
             this.hautToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
             this.hautToolStripPanel.RowMargin = new System.Windows.Forms.Padding(4, 0, 0, 0);
             this.hautToolStripPanel.Size = new System.Drawing.Size(1232, 68);
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1,
+            this.toolStripButton2,
+            this.toolStripButton3,
+            this.toolStripSeparator12,
+            this.couperToolStripButton,
+            this.copierToolStripButton,
+            this.collerToolStripButton,
+            this.toolStripSeparator15,
+            this.toolStripComboBox3,
+            this.toolStripComboBox4,
+            this.toolStripSeparator16,
+            this.boldToolStripButton,
+            this.italicToolStripButton,
+            this.underlineToolStripButton,
+            this.toolStripSeparator17,
+            this.allignementGaucheToolStripButton,
+            this.allignementMilieuToolStripButtons,
+            this.allignementDroiteToolStripButton,
+            this.toolStripSeparator18,
+            this.toolStripButton18});
+            this.toolStrip1.Location = new System.Drawing.Point(18, 35);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(828, 33);
+            this.toolStrip1.TabIndex = 12;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(34, 28);
+            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.ToolTipText = "newToolStripButton1";
+            this.toolStripButton1.Click += new System.EventHandler(this.NouveauToolStripMenuItem_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(34, 28);
+            this.toolStripButton2.Text = "ouvrirToolStripButton2";
+            this.toolStripButton2.Click += new System.EventHandler(this.OuvrirToolStripMenuItem_Click);
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(34, 28);
+            this.toolStripButton3.Text = "toolStripButton3";
+            this.toolStripButton3.Click += new System.EventHandler(this.EnregistréeToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator12
+            // 
+            this.toolStripSeparator12.Name = "toolStripSeparator12";
+            this.toolStripSeparator12.Size = new System.Drawing.Size(6, 33);
+            // 
+            // couperToolStripButton
+            // 
+            this.couperToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.couperToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("couperToolStripButton.Image")));
+            this.couperToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.couperToolStripButton.Name = "couperToolStripButton";
+            this.couperToolStripButton.Size = new System.Drawing.Size(34, 28);
+            this.couperToolStripButton.Text = "couperToolStripButton4";
+            // 
+            // copierToolStripButton
+            // 
+            this.copierToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.copierToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("copierToolStripButton.Image")));
+            this.copierToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.copierToolStripButton.Name = "copierToolStripButton";
+            this.copierToolStripButton.Size = new System.Drawing.Size(34, 28);
+            this.copierToolStripButton.Text = "toolStripButton5";
+            // 
+            // collerToolStripButton
+            // 
+            this.collerToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.collerToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("collerToolStripButton.Image")));
+            this.collerToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.collerToolStripButton.Name = "collerToolStripButton";
+            this.collerToolStripButton.Size = new System.Drawing.Size(34, 28);
+            this.collerToolStripButton.Text = "toolStripButton6";
+            // 
+            // toolStripSeparator15
+            // 
+            this.toolStripSeparator15.Name = "toolStripSeparator15";
+            this.toolStripSeparator15.Size = new System.Drawing.Size(6, 33);
+            // 
+            // toolStripComboBox3
+            // 
+            this.toolStripComboBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.toolStripComboBox3.Name = "toolStripComboBox3";
+            this.toolStripComboBox3.Size = new System.Drawing.Size(165, 33);
+            // 
+            // toolStripComboBox4
+            // 
+            this.toolStripComboBox4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.toolStripComboBox4.Name = "toolStripComboBox4";
+            this.toolStripComboBox4.Size = new System.Drawing.Size(165, 33);
+            // 
+            // toolStripSeparator16
+            // 
+            this.toolStripSeparator16.Name = "toolStripSeparator16";
+            this.toolStripSeparator16.Size = new System.Drawing.Size(6, 33);
+            // 
+            // boldToolStripButton
+            // 
+            this.boldToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.boldToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("boldToolStripButton.Image")));
+            this.boldToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.boldToolStripButton.Name = "boldToolStripButton";
+            this.boldToolStripButton.Size = new System.Drawing.Size(34, 28);
+            this.boldToolStripButton.Text = "boldToolStripButton7";
+            // 
+            // italicToolStripButton
+            // 
+            this.italicToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.italicToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("italicToolStripButton.Image")));
+            this.italicToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.italicToolStripButton.Name = "italicToolStripButton";
+            this.italicToolStripButton.Size = new System.Drawing.Size(34, 28);
+            this.italicToolStripButton.Text = "toolStripButton8";
+            this.italicToolStripButton.ToolTipText = "italiqueToolStripButton8";
+            // 
+            // underlineToolStripButton
+            // 
+            this.underlineToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.underlineToolStripButton.Image = global::GestionBibliotheque.Properties.Resources.underline;
+            this.underlineToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.underlineToolStripButton.Name = "underlineToolStripButton";
+            this.underlineToolStripButton.Size = new System.Drawing.Size(34, 28);
+            this.underlineToolStripButton.Text = "underlineToolStripButton9";
+            // 
+            // toolStripSeparator17
+            // 
+            this.toolStripSeparator17.Name = "toolStripSeparator17";
+            this.toolStripSeparator17.Size = new System.Drawing.Size(6, 33);
+            // 
+            // allignementGaucheToolStripButton
+            // 
+            this.allignementGaucheToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.allignementGaucheToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("allignementGaucheToolStripButton.Image")));
+            this.allignementGaucheToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.allignementGaucheToolStripButton.Name = "allignementGaucheToolStripButton";
+            this.allignementGaucheToolStripButton.Size = new System.Drawing.Size(34, 28);
+            this.allignementGaucheToolStripButton.Text = "toolStripButton10";
+            // 
+            // allignementMilieuToolStripButtons
+            // 
+            this.allignementMilieuToolStripButtons.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.allignementMilieuToolStripButtons.Image = ((System.Drawing.Image)(resources.GetObject("allignementMilieuToolStripButtons.Image")));
+            this.allignementMilieuToolStripButtons.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.allignementMilieuToolStripButtons.Name = "allignementMilieuToolStripButtons";
+            this.allignementMilieuToolStripButtons.Size = new System.Drawing.Size(34, 28);
+            this.allignementMilieuToolStripButtons.Text = "toolStripButton11";
+            // 
+            // allignementDroiteToolStripButton
+            // 
+            this.allignementDroiteToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.allignementDroiteToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("allignementDroiteToolStripButton.Image")));
+            this.allignementDroiteToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.allignementDroiteToolStripButton.Name = "allignementDroiteToolStripButton";
+            this.allignementDroiteToolStripButton.Size = new System.Drawing.Size(34, 28);
+            this.allignementDroiteToolStripButton.Text = "toolStripButton12";
+            // 
+            // toolStripSeparator18
+            // 
+            this.toolStripSeparator18.Name = "toolStripSeparator18";
+            this.toolStripSeparator18.Size = new System.Drawing.Size(6, 33);
+            // 
+            // toolStripButton18
+            // 
+            this.toolStripButton18.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton18.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton18.Image")));
+            this.toolStripButton18.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton18.Name = "toolStripButton18";
+            this.toolStripButton18.Size = new System.Drawing.Size(34, 28);
+            this.toolStripButton18.Text = "toolStripButton13";
             // 
             // menuStrip1
             // 
@@ -163,6 +353,7 @@
             this.OuvrirToolStripMenuItem.Name = "OuvrirToolStripMenuItem";
             this.OuvrirToolStripMenuItem.Size = new System.Drawing.Size(283, 34);
             this.OuvrirToolStripMenuItem.Text = "Ouvrir...           Ctrl+O";
+            this.OuvrirToolStripMenuItem.Click += new System.EventHandler(this.OuvrirToolStripMenuItem_Click);
             // 
             // toolStripMenuItem5
             // 
@@ -181,13 +372,14 @@
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
             this.toolStripMenuItem6.Size = new System.Drawing.Size(283, 34);
             this.toolStripMenuItem6.Text = "Enregistrer      Ctrl+S";
+            this.toolStripMenuItem6.Click += new System.EventHandler(this.EnregistréeToolStripMenuItem_Click);
             // 
             // EnregistrerSousToolStripMenuItem
             // 
             this.EnregistrerSousToolStripMenuItem.Name = "EnregistrerSousToolStripMenuItem";
             this.EnregistrerSousToolStripMenuItem.Size = new System.Drawing.Size(283, 34);
             this.EnregistrerSousToolStripMenuItem.Text = "Enregistrer sous...";
-            this.EnregistrerSousToolStripMenuItem.Click += new System.EventHandler(this.EnregistrerSousToolStripMenuItem_Click);
+            this.EnregistrerSousToolStripMenuItem.Click += new System.EventHandler(this.EnregistréeToolStripMenuItem_Click);
             // 
             // toolStripSeparator11
             // 
@@ -221,18 +413,21 @@
             this.couperToolStripMenuItem.Name = "couperToolStripMenuItem";
             this.couperToolStripMenuItem.Size = new System.Drawing.Size(295, 34);
             this.couperToolStripMenuItem.Text = "Couper     Ctrl+Shift+X";
+            this.couperToolStripMenuItem.Click += new System.EventHandler(this.Edition_Click);
             // 
             // copierToolStripMenuItem
             // 
             this.copierToolStripMenuItem.Name = "copierToolStripMenuItem";
             this.copierToolStripMenuItem.Size = new System.Drawing.Size(295, 34);
             this.copierToolStripMenuItem.Text = "Copier      Ctrl+Shift+C";
+            this.copierToolStripMenuItem.Click += new System.EventHandler(this.Edition_Click);
             // 
             // collerToolStripMenuItem
             // 
             this.collerToolStripMenuItem.Name = "collerToolStripMenuItem";
             this.collerToolStripMenuItem.Size = new System.Drawing.Size(295, 34);
             this.collerToolStripMenuItem.Text = "Coller       Ctrl+Shift+V";
+            this.collerToolStripMenuItem.Click += new System.EventHandler(this.Edition_Click);
             // 
             // toolStripSeparator13
             // 
@@ -244,12 +439,14 @@
             this.effacerToolStripMenuItem.Name = "effacerToolStripMenuItem";
             this.effacerToolStripMenuItem.Size = new System.Drawing.Size(295, 34);
             this.effacerToolStripMenuItem.Text = "Effacer";
+            this.effacerToolStripMenuItem.Click += new System.EventHandler(this.Edition_Click);
             // 
             // toutSelectionnerToolStripMenuItem
             // 
             this.toutSelectionnerToolStripMenuItem.Name = "toutSelectionnerToolStripMenuItem";
             this.toutSelectionnerToolStripMenuItem.Size = new System.Drawing.Size(295, 34);
             this.toutSelectionnerToolStripMenuItem.Text = "Selectionner    Ctrl+A";
+            this.toutSelectionnerToolStripMenuItem.Click += new System.EventHandler(this.Edition_Click);
             // 
             // toolStripSeparator14
             // 
@@ -277,7 +474,7 @@
             this.systemeToolStripMenuItem,
             this.gestionnaireToolStripMenuItem20});
             this.outilsToolStripMenuItem.Name = "outilsToolStripMenuItem";
-            this.outilsToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.outilsToolStripMenuItem.Size = new System.Drawing.Size(217, 34);
             this.outilsToolStripMenuItem.Text = "Barre d\'outils";
             // 
             // professionnelToolStripMenuItem
@@ -458,195 +655,6 @@
             // 
             this.OuvrirFileOpenFileDialog.FileName = "openFileDialog1";
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2,
-            this.toolStripButton3,
-            this.toolStripSeparator12,
-            this.couperToolStripButton,
-            this.copierToolStripButton,
-            this.collerToolStripButton,
-            this.toolStripSeparator15,
-            this.toolStripComboBox3,
-            this.toolStripComboBox4,
-            this.toolStripSeparator16,
-            this.boldToolStripButton,
-            this.italicToolStripButton,
-            this.underlineToolStripButton,
-            this.toolStripSeparator17,
-            this.allignementGaucheToolStripButton,
-            this.allignementMilieuToolStripButtons,
-            this.allignementDroiteToolStripButton,
-            this.toolStripSeparator18,
-            this.toolStripButton18});
-            this.toolStrip1.Location = new System.Drawing.Point(18, 35);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(828, 33);
-            this.toolStrip1.TabIndex = 12;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(34, 28);
-            this.toolStripButton1.Text = "toolStripButton1";
-            this.toolStripButton1.ToolTipText = "newToolStripButton1";
-            this.toolStripButton1.Click += new System.EventHandler(this.NouveauToolStripMenuItem_Click);
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(34, 28);
-            this.toolStripButton2.Text = "ouvrirToolStripButton2";
-            this.toolStripButton2.Click += new System.EventHandler(this.OuvrirToolStripMenuItem_Click);
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(34, 28);
-            this.toolStripButton3.Text = "toolStripButton3";
-            // 
-            // toolStripSeparator12
-            // 
-            this.toolStripSeparator12.Name = "toolStripSeparator12";
-            this.toolStripSeparator12.Size = new System.Drawing.Size(6, 33);
-            // 
-            // couperToolStripButton
-            // 
-            this.couperToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.couperToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("couperToolStripButton.Image")));
-            this.couperToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.couperToolStripButton.Name = "couperToolStripButton";
-            this.couperToolStripButton.Size = new System.Drawing.Size(34, 28);
-            this.couperToolStripButton.Text = "couperToolStripButton4";
-            // 
-            // copierToolStripButton
-            // 
-            this.copierToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.copierToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("copierToolStripButton.Image")));
-            this.copierToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.copierToolStripButton.Name = "copierToolStripButton";
-            this.copierToolStripButton.Size = new System.Drawing.Size(34, 28);
-            this.copierToolStripButton.Text = "toolStripButton5";
-            // 
-            // collerToolStripButton
-            // 
-            this.collerToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.collerToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("collerToolStripButton.Image")));
-            this.collerToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.collerToolStripButton.Name = "collerToolStripButton";
-            this.collerToolStripButton.Size = new System.Drawing.Size(34, 28);
-            this.collerToolStripButton.Text = "toolStripButton6";
-            // 
-            // toolStripSeparator15
-            // 
-            this.toolStripSeparator15.Name = "toolStripSeparator15";
-            this.toolStripSeparator15.Size = new System.Drawing.Size(6, 33);
-            // 
-            // toolStripComboBox3
-            // 
-            this.toolStripComboBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.toolStripComboBox3.Name = "toolStripComboBox3";
-            this.toolStripComboBox3.Size = new System.Drawing.Size(165, 33);
-            // 
-            // toolStripComboBox4
-            // 
-            this.toolStripComboBox4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.toolStripComboBox4.Name = "toolStripComboBox4";
-            this.toolStripComboBox4.Size = new System.Drawing.Size(165, 33);
-            // 
-            // toolStripSeparator16
-            // 
-            this.toolStripSeparator16.Name = "toolStripSeparator16";
-            this.toolStripSeparator16.Size = new System.Drawing.Size(6, 33);
-            // 
-            // boldToolStripButton
-            // 
-            this.boldToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.boldToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("boldToolStripButton.Image")));
-            this.boldToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.boldToolStripButton.Name = "boldToolStripButton";
-            this.boldToolStripButton.Size = new System.Drawing.Size(34, 28);
-            this.boldToolStripButton.Text = "boldToolStripButton7";
-            // 
-            // italicToolStripButton
-            // 
-            this.italicToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.italicToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("italicToolStripButton.Image")));
-            this.italicToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.italicToolStripButton.Name = "italicToolStripButton";
-            this.italicToolStripButton.Size = new System.Drawing.Size(34, 28);
-            this.italicToolStripButton.Text = "toolStripButton8";
-            this.italicToolStripButton.ToolTipText = "italiqueToolStripButton8";
-            // 
-            // underlineToolStripButton
-            // 
-            this.underlineToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.underlineToolStripButton.Image = global::GestionBibliotheque.Properties.Resources.underline;
-            this.underlineToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.underlineToolStripButton.Name = "underlineToolStripButton";
-            this.underlineToolStripButton.Size = new System.Drawing.Size(34, 28);
-            this.underlineToolStripButton.Text = "underlineToolStripButton9";
-            // 
-            // toolStripSeparator17
-            // 
-            this.toolStripSeparator17.Name = "toolStripSeparator17";
-            this.toolStripSeparator17.Size = new System.Drawing.Size(6, 33);
-            // 
-            // allignementGaucheToolStripButton
-            // 
-            this.allignementGaucheToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.allignementGaucheToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("allignementGaucheToolStripButton.Image")));
-            this.allignementGaucheToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.allignementGaucheToolStripButton.Name = "allignementGaucheToolStripButton";
-            this.allignementGaucheToolStripButton.Size = new System.Drawing.Size(34, 28);
-            this.allignementGaucheToolStripButton.Text = "toolStripButton10";
-            // 
-            // allignementMilieuToolStripButtons
-            // 
-            this.allignementMilieuToolStripButtons.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.allignementMilieuToolStripButtons.Image = ((System.Drawing.Image)(resources.GetObject("allignementMilieuToolStripButtons.Image")));
-            this.allignementMilieuToolStripButtons.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.allignementMilieuToolStripButtons.Name = "allignementMilieuToolStripButtons";
-            this.allignementMilieuToolStripButtons.Size = new System.Drawing.Size(34, 28);
-            this.allignementMilieuToolStripButtons.Text = "toolStripButton11";
-            // 
-            // allignementDroiteToolStripButton
-            // 
-            this.allignementDroiteToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.allignementDroiteToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("allignementDroiteToolStripButton.Image")));
-            this.allignementDroiteToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.allignementDroiteToolStripButton.Name = "allignementDroiteToolStripButton";
-            this.allignementDroiteToolStripButton.Size = new System.Drawing.Size(34, 28);
-            this.allignementDroiteToolStripButton.Text = "toolStripButton12";
-            // 
-            // toolStripSeparator18
-            // 
-            this.toolStripSeparator18.Name = "toolStripSeparator18";
-            this.toolStripSeparator18.Size = new System.Drawing.Size(6, 33);
-            // 
-            // toolStripButton18
-            // 
-            this.toolStripButton18.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton18.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton18.Image")));
-            this.toolStripButton18.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton18.Name = "toolStripButton18";
-            this.toolStripButton18.Size = new System.Drawing.Size(34, 28);
-            this.toolStripButton18.Text = "toolStripButton13";
-            // 
             // BibliothequeParentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -665,13 +673,13 @@
             this.Click += new System.EventHandler(this.Edition_Click);
             this.hautToolStripPanel.ResumeLayout(false);
             this.hautToolStripPanel.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.basToolStripPanel.ResumeLayout(false);
             this.ficheStatusStrip1.ResumeLayout(false);
             this.ficheStatusStrip1.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
