@@ -28,6 +28,7 @@ namespace GestionBibliotheque
 
         #endregion
 
+        #region Constructeur
         public LivreEnfantForm()
         {
             InitializeComponent();
@@ -40,6 +41,7 @@ namespace GestionBibliotheque
             nbrJoursTextBox4.TextChanged += Zones_TextChanged;
             richTextBox.TextChanged += Zones_TextChanged;
         }
+        #endregion
 
         #region Form_Closing
         private void LivreEnfantForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -168,11 +170,28 @@ namespace GestionBibliotheque
         {
             Modification = true;
         }
+
         #endregion
 
-        private void LivreEnfantForm_Load(object sender, EventArgs e)
+        public void ChangerAttributsPolice(FontStyle style)
         {
-
+            try
+            {
+                if (richTextBox.SelectionFont != null)
+                {
+                    // Création d'une nouvelle police avec le style choisi
+                    Font currentFont = richTextBox.SelectionFont;
+                    Font newFont = new Font(currentFont, style);
+                    richTextBox.SelectionFont = newFont;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur ChangerAttributsPolice : " + ex.Message);
+            }
         }
+
+
+
     }
 }
