@@ -1,0 +1,11 @@
+C:\Users\fiand\Source\Repos\devoir1\bin\Debug\GestionBibliotheque.exe.config
+C:\Users\fiand\Source\Repos\devoir1\bin\Debug\GestionBibliotheque.exe
+C:\Users\fiand\Source\Repos\devoir1\bin\Debug\GestionBibliotheque.pdb
+C:\Users\fiand\Source\Repos\devoir1\obj\Debug\GestionBibliotheque.csproj.AssemblyReference.cache
+C:\Users\fiand\Source\Repos\devoir1\obj\Debug\GestionBibliotheque.BibliothequeParentForm.resources
+C:\Users\fiand\Source\Repos\devoir1\obj\Debug\GestionBibliotheque.LivreEnfantForm.resources
+C:\Users\fiand\Source\Repos\devoir1\obj\Debug\GestionBibliotheque.Properties.Resources.resources
+C:\Users\fiand\Source\Repos\devoir1\obj\Debug\GestionBibliotheque.csproj.GenerateResource.cache
+C:\Users\fiand\Source\Repos\devoir1\obj\Debug\GestionBibliotheque.csproj.CoreCompileInputs.cache
+C:\Users\fiand\Source\Repos\devoir1\obj\Debug\GestionBibliotheque.exe
+C:\Users\fiand\Source\Repos\devoir1\obj\Debug\GestionBibliotheque.pdb
