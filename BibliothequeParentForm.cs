@@ -48,6 +48,7 @@ namespace GestionBibliotheque
             openFileDialog.CheckFileExists = true;
             openFileDialog.CheckPathExists = true;
             openFileDialog.DefaultExt = "rtf";
+            DesactiverOperationsMenusBarreOutils();
         }
         #endregion
 
@@ -155,6 +156,8 @@ namespace GestionBibliotheque
                     enfant.Enregistrement = true;
 
                     enfant.Show();
+
+
                 }
             }
             catch (Exception ex)
@@ -432,6 +435,113 @@ namespace GestionBibliotheque
 
         #endregion
 
+
+        #region Méthode DesactiverOperationsMenusBarreOutils
+        private void DesactiverOperationsMenusBarreOutils()
+        {
+            try
+            {
+                // Parcourir tous les menus principaux
+                foreach (ToolStripItem mainItem in menuStrip1.Items)
+                {
+
+                    if (mainItem is ToolStripMenuItem mainMenu)
+                    {
+                        // Si c'est le menu Fichier, on traite ses sous-menus
+                        if (mainMenu.Name == "fichierToolStripMenuItem")
+                        {
+                            mainMenu.Enabled = true; // Le menu Fichier reste actif
+                            foreach (ToolStripItem subItem in mainMenu.DropDownItems)
+                            {
+                                // On active seulement Nouveau et Ouvrir, on désactive les autres
+                                if (subItem.Name == "NouveauToolStripMenuItem" || subItem.Name == "OuvrirToolStripMenuItem" 
+                                    || subItem.Name == "quitterToolStripMenuItem")
+                                    subItem.Enabled = true;
+                                else
+                                    subItem.Enabled = false;
+                            }
+                        }
+                        else
+                        {
+                            // Les autres menus principaux sont désactivés
+                            mainMenu.Enabled = false;
+                            foreach (ToolStripItem subItem in mainMenu.DropDownItems)
+                            {
+                                subItem.Enabled = false;
+                            }
+                        }
+                    }
+                    
+                }
+
+                // Activer tous les boutons de la barre d’outils sauf Couper et Coller
+                foreach (ToolStripItem bouton in sousMenuToolStrip.Items)
+                {
+                    if (bouton.Name == "newFichierToolStripButton"
+                || bouton.Name == "ouvrirToolStripButton")
+                        bouton.Enabled = true;
+                    else
+                        bouton.Enabled = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur dans DesactiverOperationsMenusBarreOutils : " + ex.Message,
+                                "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        #endregion
+
+
+        #region Méthode Parent_MdiChildActivate
+        private void BibliothequeParentForm_MdiChildActivate(object sender, EventArgs e)
+        {
+            // Vérifier si le formulaire enfant est nul
+            if (this.ActiveMdiChild == null)
+            {
+                // Appel à la méthode de désactivation des menus/barres d’outils
+                DesactiverOperationsMenusBarreOutils();
+                
+            }
+        }
+        #endregion
+
+
+        #region Méthode ActiverOperationsMenusBarreOutils
+        private void ActiverOperationsMenusBarreOutils()
+        {
+            // Activer tous les menus et sous-menus
+            foreach (ToolStripMenuItem oMainToolStripItem in menuStrip1.Items)
+            {
+                oMainToolStripItem.Enabled = true;
+                // Boucle pour passer à travers les sous-menus si nécessaire
+                foreach (object oCourantToolStripItem in oMainToolStripItem.DropDownItems)
+                {
+                    if (oCourantToolStripItem is ToolStripMenuItem sousMenu)
+                    {
+                        sousMenu.Enabled = true;
+                    }
+                }
+            }
+
+            // Activer tous les boutons de la barre d’outils
+            foreach (ToolStripItem boutonToolStripItem in sousMenuToolStrip.Items)
+            {
+                boutonToolStripItem.Enabled = true;
+            }
+
+            // Désactiver les boutons Copier/Couper si pas de sélection, Coller si pas de texte dans le presse-papiers
+            copierToolStripMenuItem.Enabled = false;
+            couperToolStripMenuItem.Enabled = false;
+            copierToolStripButton.Enabled = false;
+            couperToolStripButton.Enabled = false;
+            collerToolStripMenuItem.Enabled = Clipboard.ContainsText();
+            collerToolStripButton.Enabled = Clipboard.ContainsText();
+        }
+
+        #endregion
+
     }
 }
+        
 
