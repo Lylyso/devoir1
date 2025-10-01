@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
 
-
 namespace GestionBibliotheque
 {
+    
+    // Formulaire enfant pour la gestion des livres d'enfants.
+  
     public partial class LivreEnfantForm : Form
     {
         #region Propriétés
@@ -26,7 +22,6 @@ namespace GestionBibliotheque
         public RichTextBox RaisonRichTextBox { get { return richTextBox; } }
 
         private string cheminFichier;
-
         #endregion
 
         #region Constructeur
@@ -35,6 +30,7 @@ namespace GestionBibliotheque
             InitializeComponent();
             Modification = false;
             Enregistrement = false;
+
             // Détecter modifications
             nomTextBox.TextChanged += Zones_TextChanged;
             classeTextBox.TextChanged += Zones_TextChanged;
@@ -48,7 +44,100 @@ namespace GestionBibliotheque
         }
         #endregion
 
-        #region Form_Closing
+        #region Méthode SelectionChanged
+        
+        // Gère la sélection dans le RichTextBox et met à jour l'état des boutons du parent.
+       
+        private void RichTextBox_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                // MdiParent pour capter le formulaire principal
+                var parent = this.MdiParent as BibliothequeParentForm;
+                if (parent == null) return;
+
+                // Boutons Gras, Italique, Souligné
+                var font = richTextBox.SelectionFont ?? richTextBox.Font;
+                parent.boldToolStripButton.Checked = font.Bold;
+                parent.italicToolStripButton.Checked = font.Italic;
+                parent.underlineToolStripButton.Checked = font.Underline;
+
+                // Vérifier le contenu du presse-papiers (texte)
+                bool hasClipboardText = Clipboard.ContainsText();
+                parent.collerToolStripMenuItem.Enabled = hasClipboardText;
+                parent.collerToolStripButton.Enabled = hasClipboardText;
+
+                // Bouton Copier/Couper activé si sélection > 0
+                bool hasSelection = richTextBox.SelectionLength > 0;
+                parent.copierToolStripMenuItem.Enabled = hasSelection;
+                parent.copierToolStripButton.Enabled = hasSelection;
+                parent.couperToolStripMenuItem.Enabled = hasSelection;
+                parent.couperToolStripButton.Enabled = hasSelection;
+
+                // Vérifier l'alignement
+                parent.alignementGaucheToolStripButton.Checked = (richTextBox.SelectionAlignment == HorizontalAlignment.Left);
+                parent.alignementMilieuToolStripButtons.Checked = (richTextBox.SelectionAlignment == HorizontalAlignment.Center);
+                parent.alignementDroiteToolStripButton.Checked = (richTextBox.SelectionAlignment == HorizontalAlignment.Right);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur RichTextBox_SelectionChanged : " + ex.Message);
+            }
+        }
+        #endregion
+
+        #region Méthode ClientActivated
+      
+        // Appelée lors de l'activation du formulaire enfant.
+      
+        private void LivreEnfantForm_Activated(object sender, EventArgs e)
+        {
+            // Appel direct à SelectionChanged (null comme paramètres)
+            RichTextBox_SelectionChanged(richTextBox, EventArgs.Empty);
+        }
+        #endregion
+
+        #region Méthode ChangerAttributsPolice
+
+        public void ChangerAttributsPolice(FontStyle style)
+        {
+            try
+            {
+                // Vérifier si le style est disponible
+                if (richTextBox.SelectionFont != null)
+                {
+
+                    Font currentFont = richTextBox.SelectionFont;
+                    FontStyle newFontStyle;
+
+                    if(currentFont.Style.HasFlag(style))
+                    {
+                        // Retirer le style
+                        newFontStyle = currentFont.Style & ~style;
+                    }
+                    else
+                    {
+                        // Ajouter le style
+                        newFontStyle = currentFont.Style | style;
+                    }
+                    richTextBox.SelectionFont = new Font(richTextBox.SelectionFont, style);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur ChangerAttributsPolice : " + ex.Message);
+            }
+        }
+        #endregion
+
+        #region Méthode Zones_TextChanged
+        private void Zones_TextChanged(object sender, EventArgs e)
+        {
+            Modification = true;
+        }
+        #endregion
+
+        #region Méthode FormClosing
         private void LivreEnfantForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             try
@@ -84,7 +173,7 @@ namespace GestionBibliotheque
         }
         #endregion
 
-        #region Méthode Enregistrer
+        #region Méthodes Enregistrer/EnregistrerSous
         public void Enregistrer()
         {
             try
@@ -100,7 +189,6 @@ namespace GestionBibliotheque
                         RichTextBox temp = new RichTextBox();
                         temp.Rtf = richTextBox.Rtf;
 
-                        // Insérer infos de l’étudiant + livre
                         temp.SelectionStart = 0;
                         temp.SelectionLength = 0;
                         temp.SelectedText = nomTextBox.Text + Environment.NewLine +
@@ -108,7 +196,7 @@ namespace GestionBibliotheque
                                             titreLivreTextBox.Text + Environment.NewLine +
                                             nbrJoursTextBox.Text + Environment.NewLine;
 
-                        temp.SaveFile(this.Text, RichTextBoxStreamType.RichText);
+                        temp.SaveFile(cheminFichier, RichTextBoxStreamType.RichText);
 
                         Modification = false;
                     }
@@ -120,10 +208,7 @@ namespace GestionBibliotheque
                                 "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        #endregion
-        //logic for saving the file with a SaveFileDialog
 
-        #region Méthode EnregistrerSous
         public void EnregistrerSous()
         {
             try
@@ -157,7 +242,8 @@ namespace GestionBibliotheque
 
                     temp.SaveFile(fichier, RichTextBoxStreamType.RichText);
 
-                    this.Text = fichier;
+                    cheminFichier = fichier;
+                    this.Text = Path.GetFileName(fichier);
                     Enregistrement = true;
                     Modification = false;
                 }
@@ -169,123 +255,5 @@ namespace GestionBibliotheque
             }
         }
         #endregion
-
-        #region Méthode TextChanged
-        private void Zones_TextChanged(object sender, EventArgs e)
-        {
-            Modification = true;
-        }
-
-        #endregion
-
-        public void ChangerAttributsPolice(FontStyle style)
-        {
-            try
-            {
-                if (richTextBox.SelectionFont != null)
-                {
-                    // Création d'une nouvelle police avec le style choisi
-                    Font currentFont = richTextBox.SelectionFont;
-                    Font newFont = new Font(currentFont, style);
-                    richTextBox.SelectionFont = newFont;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erreur ChangerAttributsPolice : " + ex.Message);
-            }
-        }
-
-        private void RichTextBox_SelectionChanged(object sender, EventArgs e)
-{
-    try
-    {
-        BibliothequeParentForm parent = this.MdiParent as BibliothequeParentForm;
-        if (parent == null) return;
-
-        RichTextBox rtb = sender as RichTextBox;
-        if (rtb == null) return;
-
-        Font currentFont = rtb.SelectionFont;
-        if (currentFont == null) return;
-
-        // Mettre à jour les boutons du parent
-        parent.boldToolStripButton.Checked = currentFont.Bold;
-        parent.italiqueToolStripButton.Checked = currentFont.Italic;
-        parent.souligneToolStripButton.Checked = currentFont.Underline;
-
-        parent.couperToolStripMenuItem.Enabled = rtb.SelectionLength > 0;
-        parent.copierToolStripMenuItem.Enabled = rtb.SelectionLength > 0;
-        parent.collerToolStripMenuItem.Enabled = Clipboard.ContainsText();
-
-        // Alignement
-        switch (rtb.SelectionAlignment)
-        {
-            case HorizontalAlignment.Left:
-                parent.gaucheToolStripButton.Checked = true;
-                parent.centreToolStripButton.Checked = false;
-                parent.droiteToolStripButton.Checked = false;
-                break;
-            case HorizontalAlignment.Center:
-                parent.gaucheToolStripButton.Checked = false;
-                parent.centreToolStripButton.Checked = true;
-                parent.droiteToolStripButton.Checked = false;
-                break;
-            case HorizontalAlignment.Right:
-                parent.gaucheToolStripButton.Checked = false;
-                parent.centreToolStripButton.Checked = false;
-                parent.droiteToolStripButton.Checked = true;
-                break;
-        }
-    }
-    catch (Exception ex)
-    {
-        MessageBox.Show("Erreur RichTextBox_SelectionChanged : " + ex.Message);
-    }
-}
-
-        private void LivreEnfantForm_Activated(object sender, EventArgs e)
-        {
-            if (this.ActiveControl is RichTextBox rtb)
-            {
-                RichTextBox_SelectionChanged(rtb, EventArgs.Empty);
-            }
-        }
-        private void ChangerAttributsPolice(FontStyle style, bool activer)
-        {
-            if (this.ActiveMdiChild is LivreEnfantForm enfant)
-            {
-                RichTextBox rtb = enfant.RaisonRichTextBox;
-
-                if (rtb.SelectionFont != null)
-                {
-                    FontStyle newStyle = rtb.SelectionFont.Style;
-
-                    if (activer)
-                        newStyle |= style;   // Ajoute le style
-                    else
-                        newStyle &= ~style;  // Enlève le style
-
-                    rtb.SelectionFont = new Font(rtb.SelectionFont, newStyle);
-                }
-            }
-        }
-
-        private void LivreEnfantForm_Load(object sender, EventArgs e)
-        {
-            try 
-            {
-                BibliothequeParentForm parent = new BibliothequeParentForm();
-                if (parent != null)
-                {
-                    this.MdiParent = parent;
-                    parent.Parent = this.MdiParent as BibliothequeParentForm;
-                    parent.boldToolStripButton.Click += (s, ev) => ChangerAttributsPolice(FontStyle.Bold, parent.boldToolStripButton.Checked);
-                } 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erreur LivreEnfantForm_Load : " + ex.Message);
-            }
     }
 }
