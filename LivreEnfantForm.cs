@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,11 +19,13 @@ namespace GestionBibliotheque
         public bool Modification { get; set; } = false;
 
         // Accès publics aux contrôles
-        public TextBox NomTextBox { get { return nomTextBox1; } }
-        public TextBox ClasseTextBox { get { return classeTextBox2; } }
-        public TextBox TitreTextBox { get { return titreLivreTextBox3; } }
-        public TextBox JoursTextBox { get { return nbrJoursTextBox4; } }
+        public TextBox NomTextBox { get { return nomTextBox; } }
+        public TextBox ClasseTextBox { get { return classeTextBox; } }
+        public TextBox TitreTextBox { get { return titreLivreTextBox; } }
+        public TextBox JoursTextBox { get { return nbrJoursTextBox; } }
         public RichTextBox RaisonRichTextBox { get { return richTextBox; } }
+
+        private string cheminFichier;
 
         #endregion
 
@@ -35,11 +36,15 @@ namespace GestionBibliotheque
             Modification = false;
             Enregistrement = false;
             // Détecter modifications
-            nomTextBox1.TextChanged += Zones_TextChanged;
-            classeTextBox2.TextChanged += Zones_TextChanged;
-            titreLivreTextBox3.TextChanged += Zones_TextChanged;
-            nbrJoursTextBox4.TextChanged += Zones_TextChanged;
+            nomTextBox.TextChanged += Zones_TextChanged;
+            classeTextBox.TextChanged += Zones_TextChanged;
+            titreLivreTextBox.TextChanged += Zones_TextChanged;
+            nbrJoursTextBox.TextChanged += Zones_TextChanged;
             richTextBox.TextChanged += Zones_TextChanged;
+
+            this.FormClosing += LivreEnfantForm_FormClosing;
+            this.Activated += LivreEnfantForm_Activated;
+            richTextBox.SelectionChanged += RichTextBox_SelectionChanged;
         }
         #endregion
 
@@ -98,10 +103,10 @@ namespace GestionBibliotheque
                         // Insérer infos de l’étudiant + livre
                         temp.SelectionStart = 0;
                         temp.SelectionLength = 0;
-                        temp.SelectedText = nomTextBox1.Text + Environment.NewLine +
-                                            classeTextBox2.Text + Environment.NewLine +
-                                            titreLivreTextBox3.Text + Environment.NewLine +
-                                            nbrJoursTextBox4.Text + Environment.NewLine;
+                        temp.SelectedText = nomTextBox.Text + Environment.NewLine +
+                                            classeTextBox.Text + Environment.NewLine +
+                                            titreLivreTextBox.Text + Environment.NewLine +
+                                            nbrJoursTextBox.Text + Environment.NewLine;
 
                         temp.SaveFile(this.Text, RichTextBoxStreamType.RichText);
 
@@ -145,10 +150,10 @@ namespace GestionBibliotheque
 
                     temp.SelectionStart = 0;
                     temp.SelectionLength = 0;
-                    temp.SelectedText = nomTextBox1.Text + Environment.NewLine +
-                                        classeTextBox2.Text + Environment.NewLine +
-                                        titreLivreTextBox3.Text + Environment.NewLine +
-                                        nbrJoursTextBox4.Text + Environment.NewLine;
+                    temp.SelectedText = nomTextBox.Text + Environment.NewLine +
+                                        classeTextBox.Text + Environment.NewLine +
+                                        titreLivreTextBox.Text + Environment.NewLine +
+                                        nbrJoursTextBox.Text + Environment.NewLine;
 
                     temp.SaveFile(fichier, RichTextBoxStreamType.RichText);
 
@@ -191,7 +196,96 @@ namespace GestionBibliotheque
             }
         }
 
+        private void RichTextBox_SelectionChanged(object sender, EventArgs e)
+{
+    try
+    {
+        BibliothequeParentForm parent = this.MdiParent as BibliothequeParentForm;
+        if (parent == null) return;
 
+        RichTextBox rtb = sender as RichTextBox;
+        if (rtb == null) return;
 
+        Font currentFont = rtb.SelectionFont;
+        if (currentFont == null) return;
+
+        // Mettre à jour les boutons du parent
+        parent.boldToolStripButton.Checked = currentFont.Bold;
+        parent.italiqueToolStripButton.Checked = currentFont.Italic;
+        parent.souligneToolStripButton.Checked = currentFont.Underline;
+
+        parent.couperToolStripMenuItem.Enabled = rtb.SelectionLength > 0;
+        parent.copierToolStripMenuItem.Enabled = rtb.SelectionLength > 0;
+        parent.collerToolStripMenuItem.Enabled = Clipboard.ContainsText();
+
+        // Alignement
+        switch (rtb.SelectionAlignment)
+        {
+            case HorizontalAlignment.Left:
+                parent.gaucheToolStripButton.Checked = true;
+                parent.centreToolStripButton.Checked = false;
+                parent.droiteToolStripButton.Checked = false;
+                break;
+            case HorizontalAlignment.Center:
+                parent.gaucheToolStripButton.Checked = false;
+                parent.centreToolStripButton.Checked = true;
+                parent.droiteToolStripButton.Checked = false;
+                break;
+            case HorizontalAlignment.Right:
+                parent.gaucheToolStripButton.Checked = false;
+                parent.centreToolStripButton.Checked = false;
+                parent.droiteToolStripButton.Checked = true;
+                break;
+        }
+    }
+    catch (Exception ex)
+    {
+        MessageBox.Show("Erreur RichTextBox_SelectionChanged : " + ex.Message);
+    }
+}
+
+        private void LivreEnfantForm_Activated(object sender, EventArgs e)
+        {
+            if (this.ActiveControl is RichTextBox rtb)
+            {
+                RichTextBox_SelectionChanged(rtb, EventArgs.Empty);
+            }
+        }
+        private void ChangerAttributsPolice(FontStyle style, bool activer)
+        {
+            if (this.ActiveMdiChild is LivreEnfantForm enfant)
+            {
+                RichTextBox rtb = enfant.RaisonRichTextBox;
+
+                if (rtb.SelectionFont != null)
+                {
+                    FontStyle newStyle = rtb.SelectionFont.Style;
+
+                    if (activer)
+                        newStyle |= style;   // Ajoute le style
+                    else
+                        newStyle &= ~style;  // Enlève le style
+
+                    rtb.SelectionFont = new Font(rtb.SelectionFont, newStyle);
+                }
+            }
+        }
+
+        private void LivreEnfantForm_Load(object sender, EventArgs e)
+        {
+            try 
+            {
+                BibliothequeParentForm parent = new BibliothequeParentForm();
+                if (parent != null)
+                {
+                    this.MdiParent = parent;
+                    parent.Parent = this.MdiParent as BibliothequeParentForm;
+                    parent.boldToolStripButton.Click += (s, ev) => ChangerAttributsPolice(FontStyle.Bold, parent.boldToolStripButton.Checked);
+                } 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur LivreEnfantForm_Load : " + ex.Message);
+            }
     }
 }

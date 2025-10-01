@@ -28,128 +28,129 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.nomTextBox1 = new System.Windows.Forms.TextBox();
-            this.classeTextBox2 = new System.Windows.Forms.TextBox();
-            this.titreLivreTextBox3 = new System.Windows.Forms.TextBox();
-            this.nbrJoursTextBox4 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.nomLabel = new System.Windows.Forms.Label();
+            this.classeLabel = new System.Windows.Forms.Label();
+            this.titreLivreLabel = new System.Windows.Forms.Label();
+            this.nbrsJoursLabel = new System.Windows.Forms.Label();
+            this.nomTextBox = new System.Windows.Forms.TextBox();
+            this.classeTextBox = new System.Windows.Forms.TextBox();
+            this.titreLivreTextBox = new System.Windows.Forms.TextBox();
+            this.nbrJoursTextBox = new System.Windows.Forms.TextBox();
+            this.raisonLabel = new System.Windows.Forms.Label();
             this.richTextBox = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
-            // label1
+            // nomLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 25);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nom Etudiant";
+            this.nomLabel.AutoSize = true;
+            this.nomLabel.Location = new System.Drawing.Point(10, 31);
+            this.nomLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.nomLabel.Name = "nomLabel";
+            this.nomLabel.Size = new System.Drawing.Size(106, 20);
+            this.nomLabel.TabIndex = 0;
+            this.nomLabel.Text = "Nom Etudiant";
             // 
-            // label2
+            // classeLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 58);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Classe";
+            this.classeLabel.AutoSize = true;
+            this.classeLabel.Location = new System.Drawing.Point(10, 72);
+            this.classeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.classeLabel.Name = "classeLabel";
+            this.classeLabel.Size = new System.Drawing.Size(57, 20);
+            this.classeLabel.TabIndex = 1;
+            this.classeLabel.Text = "Classe";
             // 
-            // label3
+            // titreLivreLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 91);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 16);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Titre du livre";
+            this.titreLivreLabel.AutoSize = true;
+            this.titreLivreLabel.Location = new System.Drawing.Point(10, 114);
+            this.titreLivreLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.titreLivreLabel.Name = "titreLivreLabel";
+            this.titreLivreLabel.Size = new System.Drawing.Size(93, 20);
+            this.titreLivreLabel.TabIndex = 2;
+            this.titreLivreLabel.Text = "Titre du livre";
             // 
-            // label4
+            // nbrsJoursLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 122);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(107, 16);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Nombre de jours";
+            this.nbrsJoursLabel.AutoSize = true;
+            this.nbrsJoursLabel.Location = new System.Drawing.Point(10, 152);
+            this.nbrsJoursLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.nbrsJoursLabel.Name = "nbrsJoursLabel";
+            this.nbrsJoursLabel.Size = new System.Drawing.Size(125, 20);
+            this.nbrsJoursLabel.TabIndex = 3;
+            this.nbrsJoursLabel.Text = "Nombre de jours";
             // 
-            // nomTextBox1
+            // nomTextBox
             // 
-            this.nomTextBox1.Location = new System.Drawing.Point(202, 25);
-            this.nomTextBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.nomTextBox1.Name = "nomTextBox1";
-            this.nomTextBox1.Size = new System.Drawing.Size(74, 22);
-            this.nomTextBox1.TabIndex = 4;
+            this.nomTextBox.Location = new System.Drawing.Point(227, 31);
+            this.nomTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.nomTextBox.Name = "nomTextBox";
+            this.nomTextBox.Size = new System.Drawing.Size(83, 26);
+            this.nomTextBox.TabIndex = 4;
             // 
-            // classeTextBox2
+            // classeTextBox
             // 
-            this.classeTextBox2.Location = new System.Drawing.Point(202, 54);
-            this.classeTextBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.classeTextBox2.Name = "classeTextBox2";
-            this.classeTextBox2.Size = new System.Drawing.Size(74, 22);
-            this.classeTextBox2.TabIndex = 5;
+            this.classeTextBox.Location = new System.Drawing.Point(227, 68);
+            this.classeTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.classeTextBox.Name = "classeTextBox";
+            this.classeTextBox.Size = new System.Drawing.Size(83, 26);
+            this.classeTextBox.TabIndex = 5;
             // 
-            // titreLivreTextBox3
+            // titreLivreTextBox
             // 
-            this.titreLivreTextBox3.Location = new System.Drawing.Point(202, 89);
-            this.titreLivreTextBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.titreLivreTextBox3.Name = "titreLivreTextBox3";
-            this.titreLivreTextBox3.Size = new System.Drawing.Size(74, 22);
-            this.titreLivreTextBox3.TabIndex = 6;
+            this.titreLivreTextBox.Location = new System.Drawing.Point(227, 111);
+            this.titreLivreTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.titreLivreTextBox.Name = "titreLivreTextBox";
+            this.titreLivreTextBox.Size = new System.Drawing.Size(83, 26);
+            this.titreLivreTextBox.TabIndex = 6;
             // 
-            // nbrJoursTextBox4
+            // nbrJoursTextBox
             // 
-            this.nbrJoursTextBox4.Location = new System.Drawing.Point(202, 122);
-            this.nbrJoursTextBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.nbrJoursTextBox4.Name = "nbrJoursTextBox4";
-            this.nbrJoursTextBox4.Size = new System.Drawing.Size(74, 22);
-            this.nbrJoursTextBox4.TabIndex = 7;
+            this.nbrJoursTextBox.Location = new System.Drawing.Point(227, 152);
+            this.nbrJoursTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.nbrJoursTextBox.Name = "nbrJoursTextBox";
+            this.nbrJoursTextBox.Size = new System.Drawing.Size(83, 26);
+            this.nbrJoursTextBox.TabIndex = 7;
             // 
-            // label5
+            // raisonLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 176);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(126, 16);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Raison de l\'emprunt";
+            this.raisonLabel.AutoSize = true;
+            this.raisonLabel.Location = new System.Drawing.Point(10, 220);
+            this.raisonLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.raisonLabel.Name = "raisonLabel";
+            this.raisonLabel.Size = new System.Drawing.Size(150, 20);
+            this.raisonLabel.TabIndex = 8;
+            this.raisonLabel.Text = "Raison de l\'emprunt";
             // 
             // richTextBox
             // 
-            this.richTextBox.Location = new System.Drawing.Point(12, 202);
+            this.richTextBox.Location = new System.Drawing.Point(14, 252);
             this.richTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.richTextBox.Name = "richTextBox";
-            this.richTextBox.Size = new System.Drawing.Size(268, 93);
+            this.richTextBox.Size = new System.Drawing.Size(301, 115);
             this.richTextBox.TabIndex = 9;
             this.richTextBox.Text = "";
             // 
             // LivreEnfantForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(340, 315);
+            this.ClientSize = new System.Drawing.Size(382, 394);
             this.Controls.Add(this.richTextBox);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.nbrJoursTextBox4);
-            this.Controls.Add(this.titreLivreTextBox3);
-            this.Controls.Add(this.classeTextBox2);
-            this.Controls.Add(this.nomTextBox1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.raisonLabel);
+            this.Controls.Add(this.nbrJoursTextBox);
+            this.Controls.Add(this.titreLivreTextBox);
+            this.Controls.Add(this.classeTextBox);
+            this.Controls.Add(this.nomTextBox);
+            this.Controls.Add(this.nbrsJoursLabel);
+            this.Controls.Add(this.titreLivreLabel);
+            this.Controls.Add(this.classeLabel);
+            this.Controls.Add(this.nomLabel);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "LivreEnfantForm";
             this.Text = "Livre Bibliotheque ";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LivreEnfantForm_FormClosing);
+            this.Load += new System.EventHandler(this.LivreEnfantForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,15 +158,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox nomTextBox1;
-        private System.Windows.Forms.TextBox classeTextBox2;
-        private System.Windows.Forms.TextBox titreLivreTextBox3;
-        private System.Windows.Forms.TextBox nbrJoursTextBox4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label nomLabel;
+        private System.Windows.Forms.Label classeLabel;
+        private System.Windows.Forms.Label titreLivreLabel;
+        private System.Windows.Forms.Label nbrsJoursLabel;
+        private System.Windows.Forms.TextBox nomTextBox;
+        private System.Windows.Forms.TextBox classeTextBox;
+        private System.Windows.Forms.TextBox titreLivreTextBox;
+        private System.Windows.Forms.TextBox nbrJoursTextBox;
+        private System.Windows.Forms.Label raisonLabel;
         private System.Windows.Forms.RichTextBox richTextBox;
     }
 }
