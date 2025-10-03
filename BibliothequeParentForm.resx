@@ -228,7 +228,9 @@
         PSIYgQAAAAAASUVORK5CYII=
 </value>
   </data>
+
   <data name="alignementGaucheToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAGLSURBVDhPpZHZTsJAFIYb4yv5ED6Hj+KFF965RNxFtC64
@@ -241,7 +243,9 @@
         eAdFOT7c9n4fyQAAAABJRU5ErkJggg==
 </value>
   </data>
+
   <data name="alignementMilieuToolStripButtons.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAGESURBVDhPxZHZTsJAFIaN8ZV8CJ/DR/HCC+9c4i4iiAuu
@@ -254,7 +258,9 @@
         cmL1AAAAAElFTkSuQmCC
 </value>
   </data>
+
   <data name="alignementDroiteToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAF+SURBVDhPxZHZTsJQFEWN4Zf8CL/DT/HBB99UIo6IDA44
@@ -286,9 +292,12 @@
   <metadata name="ficheStatusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>320, 17</value>
   </metadata>
+Lydianne-phaseD
+
   <metadata name="OuvrirFileOpenFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>518, 17</value>
   </metadata>
+
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>108</value>
   </metadata>
