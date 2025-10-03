@@ -541,6 +541,9 @@ namespace GestionBibliotheque
 
         #endregion
 
+        #region Format
+
+        #endregion
     }
 }
         
